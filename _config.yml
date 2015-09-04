@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Ag-Ben
 subtitle:
 description:
-author: John Doe
-language:
+author: Ben
+language: zh-TW
 timezone:
 
 # URL
@@ -63,11 +63,10 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: jacman
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: https://github.com/lbeeon/Blog.git
-  
