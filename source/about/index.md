@@ -60,5 +60,8 @@ date: 2015-09-05 01:48:13
 - ArcGIS, GIS
 - git, SVN
 
+## 其他
+- [MongoDB for Node.js Developers](http://university.mongodb.com/course_completion/94e9d55904de43dcb50e67f5f15498ec)
+
 ## 著作
 [王鼎鈞，2013。作物資料庫及適栽作物推薦。國立中興大學，碩士論文。](http://handle.ncl.edu.tw/11296/ndltd/89200948568652684479)
