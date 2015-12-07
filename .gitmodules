@@ -1,0 +1,3 @@
+[submodule "jacman"]
+    path = themes/jacman
+    url = https://github.com/wuchong/jacman.git
