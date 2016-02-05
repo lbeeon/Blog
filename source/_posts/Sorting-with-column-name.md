@@ -1,6 +1,6 @@
 title: Sorting with column name
 tags:
-  - 'C#'
+  - C#
   - 擴充方法
   - 隨手筆記
 date: 2015-09-19 01:27:31
