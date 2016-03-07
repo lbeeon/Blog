@@ -1,7 +1,7 @@
 title: About
 date: 2015-09-05 01:48:13
 ---
-![Ben](../img/author.jpg) <h1>王鼎鈞</h1>
+![Ben](../about/author.jpg) <h1>王鼎鈞[(Resume)](../about/Resume_Ben.pdf)</h1>
 
 ## 簡介
 國立中興大學土壤環境科學系碩畢，現為軟體工程師，志力於將資料處理運用於農業。
