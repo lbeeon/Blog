@@ -1,1 +1,1 @@
-# Blog
+## [Link to my blog.](http://lbeeon.github.io/Blog/)
