@@ -55,10 +55,12 @@ date: 2015-09-05 01:48:13
 - 專家系統
 
 ## 擅長工具
+- Golang
+- Python
 - C# (MVC、Webform)
 - SQL Server
 - MongoDB
-- Javascript, jQuery
+- Javascript
 - ArcGIS, GIS
 - git, SVN
 
