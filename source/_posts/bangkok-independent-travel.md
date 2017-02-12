@@ -1,4 +1,4 @@
-title: bangkok-independent-travel
+title: 曼谷自由行
 date: 2017-02-12 21:53:08
 tags:
 - 日記
