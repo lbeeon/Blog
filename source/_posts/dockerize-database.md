@@ -98,4 +98,4 @@ RethinkDB基本上就這樣吧，我也不想再過多著墨。
     docker run --name mysql -e MYSQL_ROOT_PASSWORD=0000 -d mysql
     docker run --name myadmin -d --link mysql:db -p 8080:80 phpmyadmin/phpmyadmin
     
-以上就是我目前有再用資料庫，以後如果有在玩新的資料庫再依依更新好了。
+以上就是我目前有再用資料庫，以後如果有在玩新的資料庫再一一更新好了。
