@@ -1,4 +1,4 @@
-title: dockerize-database
+title: Dockerize Database
 date: 2017-05-01 22:29:11
 tags:
 - Note
@@ -10,7 +10,7 @@ tags:
 - MySQL
 
 ---
-## Dockerize Your Database
+## Dockerize Database
 　　繼上一篇dockerize MySQL之後，我心裡就很想把一些其他的資料庫補一補，畢竟身為一個後端工程師，玩過幾種資料庫也是合情合理吧，這邊所提及的資料庫基本上都是我工作上有接觸到的，就用這篇來記錄一下吧。
   
 ### MongoDB
