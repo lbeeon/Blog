@@ -4,29 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Sorting with column name | Diin Ben</title>
+    <title>Google Cloud Load Balancing | Diin Ben</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Ben">
     
 
     
-    <meta name="description" content="隨手筆記IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫
-var query  = data.OrderBy(p=&amp;gt;p.col1);
-不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你">
+    <meta name="description" content="Google Cloud Load Balancing　　延續著上一篇的步調，這次來談談Google Load Balancinig，至於為什麼我會需要操作或是說用程式來控制就讓我娓娓道來，我想有使用過雲端服務的人應該都大概知道Load Balancer的功用，簡單說Load Balancer就是能夠讓你將網站或是服務乘載量大幅提高的工具，不過前提是你的程式也要能支援這樣擴展性，那我這次被指派的任">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sorting with column name">
-<meta property="og:url" content="http://lbeeon.github.io/Blog/2015/09/19/Sorting-with-column-name/index.html">
+<meta property="og:title" content="Google Cloud Load Balancing">
+<meta property="og:url" content="http://lbeeon.github.io/Blog/2017/05/28/google-cloud-load-balancing/index.html">
 <meta property="og:site_name" content="Diin Ben">
-<meta property="og:description" content="隨手筆記IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫
-var query  = data.OrderBy(p=&amp;gt;p.col1);
-不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你">
-<meta property="og:updated_time" content="2017-02-12T17:38:59.719Z">
+<meta property="og:description" content="Google Cloud Load Balancing　　延續著上一篇的步調，這次來談談Google Load Balancinig，至於為什麼我會需要操作或是說用程式來控制就讓我娓娓道來，我想有使用過雲端服務的人應該都大概知道Load Balancer的功用，簡單說Load Balancer就是能夠讓你將網站或是服務乘載量大幅提高的工具，不過前提是你的程式也要能支援這樣擴展性，那我這次被指派的任">
+<meta property="og:updated_time" content="2017-05-28T16:26:18.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sorting with column name">
-<meta name="twitter:description" content="隨手筆記IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫
-var query  = data.OrderBy(p=&amp;gt;p.col1);
-不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你">
+<meta name="twitter:title" content="Google Cloud Load Balancing">
+<meta name="twitter:description" content="Google Cloud Load Balancing　　延續著上一篇的步調，這次來談談Google Load Balancinig，至於為什麼我會需要操作或是說用程式來控制就讓我娓娓道來，我想有使用過雲端服務的人應該都大概知道Load Balancer的功用，簡單說Load Balancer就是能夠讓你將網站或是服務乘載量大幅提高的工具，不過前提是你的程式也要能支援這樣擴展性，那我這次被指派的任">
 <meta name="twitter:creator" content="@diinben">
 
     
@@ -87,14 +81,14 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/Blog/2015/09/19/Sorting-with-column-name/" title="Sorting with column name" itemprop="url">Sorting with column name</a>
+      <a href="/Blog/2017/05/28/google-cloud-load-balancing/" title="Google Cloud Load Balancing" itemprop="url">Google Cloud Load Balancing</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-18T17:27:31.000Z" itemprop="datePublished"> 發表於 2015-09-19</time>
+    <time datetime="2017-05-28T14:34:33.000Z" itemprop="datePublished"> 發表於 2017-05-28</time>
     
   </p>
 </header>
@@ -103,98 +97,51 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#隨手筆記"><span class="toc-number">1.</span> <span class="toc-text">隨手筆記</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Google_Cloud_Load_Balancing"><span class="toc-number">1.</span> <span class="toc-text">Google Cloud Load Balancing</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="隨手筆記">隨手筆記</h2><p>IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，<br>不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫</p>
-<pre><code><span class="title">var</span> query  = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt;<span class="title">p</span>.<span class="title">col1</span>)</span>;</span>
-</code></pre><p>不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你可能會寫出這樣的程式碼</p>
-<pre><code><span class="title">switch</span>(colname){
-    <span class="keyword">case</span> col1:
-            query  = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt;<span class="title">p</span>.<span class="title">col1</span>)</span>;</span>
-            break;
-    <span class="keyword">case</span> col2:
-            query  = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt;<span class="title">p</span>.<span class="title">col2</span>)</span>;</span>
-            break;
-    ......
-    <span class="default"><span class="keyword">default</span>:</span>
-            query = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt; <span class="title">p</span>.<span class="title">id</span>)</span>;</span>
-}
-</code></pre><p>這時侯你就會希望linq本身提供的排序要是也能吃欄位名稱就好了…</p>
-<p>當然我也是不例外，linq不吃字串排序使用起來實在是太不直覺了，還好皇天不負苦心人，終於讓我在<a href="http://google.com" target="_blank" rel="external">google</a>,<a href="http://stackoverflow.com" target="_blank" rel="external">stackoverflow</a>的問題海中找到了，這篇主要就是要記錄這段短小精悍的程式碼，不過一開始提到的IQueryable和IEumerable的實作上是有一些差異，不囉嗦看程式碼</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> LinqExtensions
-{
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IOrderedQueryable&lt;T&gt; OrderBy&lt;T&gt;(<span class="keyword">this</span> IQueryable&lt;T&gt; <span class="keyword">source</span>, string propertyName)
-    {
-        <span class="keyword">return</span> (IOrderedQueryable&lt;T&gt;)OrderBy((IQueryable)<span class="keyword">source</span>, propertyName);
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IQueryable OrderBy(<span class="keyword">this</span> IQueryable <span class="keyword">source</span>, string propertyName)
-    {
-
-        var x = Expression.Parameter(<span class="keyword">source</span>.ElementType, <span class="string">"x"</span>);
-
-        var selector = Expression.Lambda(Expression.PropertyOrField(x, propertyName), x);
-
-        <span class="keyword">return</span> <span class="keyword">source</span>.Provider.CreateQuery(
-
-            Expression.<span class="keyword">Call</span>(typeof(Queryable),
-                            <span class="string">"OrderBy"</span>,
-                            <span class="keyword">new</span> Type[] { <span class="keyword">source</span>.ElementType, selector.Body.Type },
-                            <span class="keyword">source</span>.Expression, selector));
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IOrderedQueryable&lt;T&gt; OrderByDescending&lt;T&gt;(<span class="keyword">this</span> IQueryable&lt;T&gt; <span class="keyword">source</span>, string propertyName)
-    {
-        <span class="keyword">return</span> (IOrderedQueryable&lt;T&gt;)OrderByDescending((IQueryable)<span class="keyword">source</span>, propertyName);
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IQueryable OrderByDescending(<span class="keyword">this</span> IQueryable <span class="keyword">source</span>, string propertyName)
-    {
-
-        var x = Expression.Parameter(<span class="keyword">source</span>.ElementType, <span class="string">"x"</span>);
-
-        var selector = Expression.Lambda(Expression.PropertyOrField(x, propertyName), x);
-
-        <span class="keyword">return</span> <span class="keyword">source</span>.Provider.CreateQuery(
-
-            Expression.<span class="keyword">Call</span>(typeof(Queryable),
-                            <span class="string">"OrderByDescending"</span>,
-                            <span class="keyword">new</span> Type[] { <span class="keyword">source</span>.ElementType, selector.Body.Type },
-                            <span class="keyword">source</span>.Expression, selector));
-    }
-}
-</code></pre><p>有了這個上面這段程式碼就可以直接寫成</p>
-<pre><code><span class="title">var</span> query = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">colname</span>)</span>;</span>
-</code></pre><p>網路上有很多種寫法，不過這種目前應該是最佳解，理由是，很多的OrderBy的寫法都是直接回傳IQueryable，而直接回傳IQueryable也沒有不好，不過你會無法接著使用ThenBy、ThenByDescending的方法。另外，當你將IQueryable實體化的時候，資料就變成了List，但是很多時候你要排序的結果都是List Array，而上面的方法就無法使用了，因此我就依樣畫葫替IEnumerable寫一段<del>請小心服用</del>，</p>
-<pre><code>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">LinqExtensions</span>
-{
-        <span class="keyword">public</span> <span class="keyword">static</span> IOrderedEnumerable&lt;TSource&gt; OrderBy&lt;TSource&gt;
-                                                (<span class="keyword">this</span> IEnumerable&lt;TSource&gt; source, <span class="keyword">string</span> propertyName)
-    {
-
-        PropertyInfo prop = <span class="keyword">typeof</span>(TSource).GetProperty(propertyName);
-        <span class="keyword">if</span> (prop == <span class="keyword">null</span>)
-        {
-            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"No property '"</span> + propertyName + <span class="string">"' in + "</span> + <span class="keyword">typeof</span>(TSource).Name + <span class="string">"'"</span>);
-        }
-        <span class="keyword">return</span> source.OrderBy(x =&gt; prop.GetValue(x, <span class="keyword">null</span>));
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IOrderedEnumerable&lt;TSource&gt; OrderByDescending&lt;TSource&gt;
-                                                (<span class="keyword">this</span> IEnumerable&lt;TSource&gt; source, <span class="keyword">string</span> propertyName)
-    {
-        PropertyInfo prop = <span class="keyword">typeof</span>(TSource).GetProperty(propertyName);
-        <span class="keyword">if</span> (prop == <span class="keyword">null</span>)
-        {
-            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"No property '"</span> + propertyName + <span class="string">"' in + "</span> + <span class="keyword">typeof</span>(TSource).Name + <span class="string">"'"</span>);
-        }
-        <span class="keyword">return</span> source.OrderByDescending(x =&gt; prop.GetValue(x, <span class="keyword">null</span>));
-    }
-}
-</code></pre><p>藉由這兩個擴充方法，你就可以在linq中展現各種排序神技。<a href="https://github.com/lbeeon/LinqExtensions" target="_blank" rel="external">(GitHub)</a></p>
+		<h3 id="Google_Cloud_Load_Balancing">Google Cloud Load Balancing</h3><p>　　延續著上一篇的步調，這次來談談Google Load Balancinig，至於為什麼我會需要操作或是說用程式來控制就讓我娓娓道來，我想有使用過雲端服務的人應該都大概知道Load Balancer的功用，簡單說Load Balancer就是能夠讓你將網站或是服務乘載量大幅提高的工具，不過前提是你的程式也要能支援這樣擴展性，那我這次被指派的任務是什麼呢？簡單說就是要幫我們的Load Balancer提供Https的Ssl憑證，並且還要定期去更新這個憑證，由於這種服務的控制正常流程都是上Google Cloud Console點一點就結束了，所以官方提供的<a href="https://godoc.org/google.golang.org/api/compute/v1" target="_blank" rel="external">api/compute</a>感覺上就是基於協定由程式產生的程式碼，所以使用起來真的是相當不直覺也沒有太多的說明，基本上可以當作是這個SDK幫你發一個POST到Compute Engine API，至於POST要提供的參數、呼叫API的先後順序大概只能用通靈的方法得知吧，因此這篇就簡單紀錄一下怎麼用這個SDK以及呼叫API的順序。<br>　　如上面所說的，Google提供的SDK相當的不方便，因此我自己就把這個SDK簡單的wrap，這個wrapper同時也實作了polling的功能，用過雲端服務的人基本上都知道，服務的開關不像是通電一樣說來就來，基本上都是需要一小段時間服務才會開始正常運作，因此如果你再不對的時間的要去存取一個還在準的資源(Resource)，那就會有很大的機會遇到一些怪怪的錯誤，尤其是像Load Balancer這種服務，如果你去Google Cloud Console上操作可能會覺得只有一個指令，但是如果用SDK操作那麼你最少會需要存取5~7種資源</p>
+<pre><code><span class="number">1.</span> Backend Service
+<span class="number">2.</span> Url Map
+<span class="number">3.</span> Target Proxy
+<span class="number">4.</span> HTTPS Target Proxy
+<span class="number">5.</span> Global Address
+<span class="number">6.</span> Forwardig Rule
+<span class="number">7.</span> Certificate
+</code></pre><p>這些條列的資源在Load Balancing的進階選項基本上都能看到，同時上面的順序也就是要產生一個Load Balancer所需要操作API的順序，至於各個資源各自所代表的意思和功能大家在自己上去文件看吧。<br>　　到此萬事都具備了，再來就是要操作SDK了，這邊簡單接紹一下我的<a href="https://github.com/lbeeon/gcloud-load-balancing" target="_blank" rel="external">gcp-loadbalancing</a>，由於<a href="https://godoc.org/google.golang.org/api/compute/v1" target="_blank" rel="external">api/compute</a>所涵蓋的功能超級多，所以我這邊也只將會用的進行處理，所提供的功能如下</p>
+<ul>
+<li><p>GetBackendService func(name string) (*compute.BackendService, error)</p>
+</li>
+<li><p>GetUrlMap func(name string)(*compute.UrlMap, error)</p>
+</li>
+<li><p>GetTargetHttpProxy func(name string)(*compute.TargetHttpProxy, error)</p>
+</li>
+<li><p>GetTargetHttpsProxy func(name string)(*compute.TargetHttpsProxy, error)</p>
+</li>
+<li><p>GetGlobalAddress func(name string) (*compute.Address, error)</p>
+</li>
+<li><p>GetForwardRule func(name string) (*compute.ForwardingRule, error)</p>
+</li>
+<li><p>GetSslCertificate func(name string)(*compute.SslCertificate, error)</p>
+</li>
+<li><p>InsertUrlMap func(name string, defaultService string)(*compute.Operation, error)</p>
+</li>
+<li><p>InsertTargetHttpProxy func(name string, urlMap string)(*compute.Operation, error)</p>
+</li>
+<li><p>InsertTargetHttpsProxy func(name string, urlMap string, sslCert []string)(*compute.Operation, error)</p>
+</li>
+<li><p>InsertTcpGlobalForwardRule func(name string, ipAddress string, targetProxy string, portRange string) (*compute.Operation, error)</p>
+</li>
+<li><p>InsertGlobalAddress func(name string)(*compute.Operation, error)</p>
+</li>
+<li><p>InsertCertificate func (name string, certificate string, privateKey string) (*compute.Operation, error)</p>
+</li>
+<li><p>SetTargetHttpsProxySslCert func (name string, sslCert []string)(*compute.Operation, error)</p>
+</li>
+</ul>
+<p>基本上Get開頭就是去讀取資源的名稱、狀態或是其他詳細資訊，Insert開頭就是建立一個相對應的資源，不囉嗦直接看程式碼<br>  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import lbt <span class="string">"github.com/lbeeon/gcp-loadbalancing"</span></span><br><span class="line"></span><br><span class="line">tools := lbt.<span class="function"><span class="title">NewLoadBalanceTools</span><span class="params">(projectID string)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// get backend service info</span></span><br><span class="line">backendServ, err := tools.<span class="function"><span class="title">GetBackendService</span><span class="params">(<span class="string">"service_name"</span>)</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// polling result automatically</span></span><br><span class="line">op, err := tools.<span class="function"><span class="title">InsertCertificate</span><span class="params">(<span class="string">"new_cert"</span>, <span class="string">"certificate"</span>,<span class="string">"privateKey"</span>)</span></span></span><br><span class="line"></span><br><span class="line">op, err = tools.<span class="function"><span class="title">SetTargetHttpsProxySslCert</span><span class="params">(<span class="string">"new_cert"</span>, []string&#123;<span class="string">"https://www.googleapis.com/compute/v1/projects/xxxxxxxx-xxxxxx-xxxxx/global/sslCertificates/xxxxxxxx"</span>&#125;)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>第一行是載入要使用的package，再來就是要建立一個可以操作API的物件，這邊要提醒一下要操作API都是要提供Credentials的，那麼在這邊我的程式會和類似BigQuery SDK一樣自動去抓GOOGLE_APPLICATION_CREDENTIALS環境變數，我想有在使用GCP的人大概都知道這是官方強烈建議要設定的環境變數，因此用這個當作標準我想是很合情合理的一件事，不過要建立一個API的物件還是要提供一個ProjectID的參數，這邊的設計基本上也是想要依循其他SDK的標準，有了這個物件之後，再來就可以簡單的試用了，像是用Get的方法去看一下Backend Service的狀況阿，或是建立一個新的憑證，又或者是幫Https Target Proxy設定一個憑證都可以簡單的操作了。<br>　　當然如果你有一些自許或自尊什麼作祟的話那建議你可以去用官方提供的<a href="https://godoc.org/google.golang.org/api/compute/v1" target="_blank" rel="external">api/compute</a>，因為我也不保證我提供的程式碼完全沒有問題XD，不過在使用過這些時間以來我是沒有遇到什麼問題就是了，以上就是簡單紀錄一下怎麼使用SDK操作Google Load Balancing。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -203,7 +150,7 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 
   <div class="article-tags">
   
-  <span></span> <a href="/Blog/tags/C/">C#</a><a href="/Blog/tags/擴充方法/">擴充方法</a><a href="/Blog/tags/隨手筆記/">隨手筆記</a>
+  <span></span> <a href="/Blog/tags/GCP/">GCP</a><a href="/Blog/tags/Google-Cloud-Platform/">Google Cloud Platform</a><a href="/Blog/tags/Load-Balancing/">Load Balancing</a><a href="/Blog/tags/golang/">golang</a>
   </div>
 
 </div>
@@ -212,7 +159,7 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://lbeeon.github.io/Blog/2015/09/19/Sorting-with-column-name/" data-title="Sorting with column name | Diin Ben" data-tsina="undefined" class="share clearfix">
+	  <div data-url="http://lbeeon.github.io/Blog/2017/05/28/google-cloud-load-balancing/" data-title="Google Cloud Load Balancing | Diin Ben" data-tsina="undefined" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -225,19 +172,11 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/Blog/2015/11/09/Shakespeare/" title="Shakespeare">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Shakespeare</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/Blog/2015/09/14/Soil-Science/"  title="Soil Science">
+<a href="/Blog/2017/05/07/BigQuery/"  title="Intro &amp; BigQuery">
  <strong>下一篇：</strong><br/> 
- <span>Soil Science
+ <span>Intro &amp; BigQuery
 </span>
 </a>
 </div>
@@ -258,7 +197,7 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#隨手筆記"><span class="toc-number">1.</span> <span class="toc-text">隨手筆記</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Google_Cloud_Load_Balancing"><span class="toc-number">1.</span> <span class="toc-text">Google Cloud Load Balancing</span></a></li></ol>
  
   </div>
 

@@ -82,6 +82,140 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/Blog/2016/02/06/C-To-Python/" title="C# To Python" itemprop="url">C# To Python</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2016-02-05T18:03:23.000Z" itemprop="datePublished"> 發表於 2016-02-06</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="隨手筆記">隨手筆記</h2><p>這幾個月我在公司的角色有了點改變，就是從後台開發被調去遊戲伺服器開發，在後台我是使用C#，而在遊戲伺服器則是使用Python，先聲明我完全沒寫過Python，不過上頭好像覺得我學什麼都很快，所以就調我過去支援，而兩邊開發最大的共同點就是都會使用MongoDB，而在C#開發的時候使用MongoDB似乎就沒有哪麼直覺，畢竟C#是強型別語言，而MongoDB又是支援Document type的NoSQL，因此每此在處理上就會有些不順手，不過這都不是重點，重點是在C#上使用MongoDB的習慣，好像也被我帶進Python…<br>這個話題就要從我review game server的程式碼開始說起，不過太長了我想還是直接講重點，就是我認為我們的code對schema的管控太鬆散，往往都是哪邊需要資料就直接在dict()內加一個key，這樣開發也沒有不好，不過個人是覺得當專案越來越大的時候，這樣的寫法可能就增加人為錯誤的發生，因此就讓我懷念起在C#開發時候對MongoDB schema的管理方式，一般而言，為了能夠讓資料讀回來放進List()內，都會先去宣告一個Class，再藉由這個Class為基礎去解析資料格式，因此所有的資料都依循宣告的資料型態以供使用，好處是，至少不會有人在某個地方偷塞一個key，你卻不知道，而這樣類似的寫法在nodejs也有提供，因此我就在想能不能提高Python對MongoDB Schema的管控，於是才有下面的程式碼，不過寫完後個人覺得完全沒屁用，唯一有用處的大概就是我知道怎麼使用 __iter__() ,next()的功能，因此還是紀錄一下這段沒有功用程式碼，<br>先示範一下一般新增一筆資料到MongoDB的最陽春寫法：</p>
+<pre><code><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+<span class="built_in">continue</span>_period = <span class="number">36000</span>
+current_time = int(time.time())
+
+<span class="built_in">test</span>_objectA =
+{
+    <span class="string">"id"</span>: str(current_time),
+    <span class="string">"name"</span>: <span class="string">"diinben"</span>,
+    <span class="string">"begin_time_ts"</span>: current_time,
+    <span class="string">"end_time_ts"</span>: current_time + <span class="built_in">continue</span>_period,
+    <span class="string">"test_objectB"</span>:{
+        <span class="string">"num1"</span>: <span class="number">50</span>,
+        <span class="string">"num2"</span>: <span class="number">100</span>
+    }
+}
+
+conn = pymongo.MongoClient(host=<span class="string">'localhost'</span>, port=<span class="number">27017</span>)
+db = conn[<span class="string">'TestDB'</span>]
+col = db[<span class="string">'TestObjectA'</span>]
+ret = col.insert(<span class="built_in">test</span>_objectA)
+<span class="built_in">print</span> <span class="string">'done: %s'</span> % ret
+</code></pre><p>大概類似這樣，直接產生一個dict()，然後把要key-value直接放進去，然後就新增，其實沒什麼太大問題，但是感覺上對於schema的管理就很鬆散，這樣的狀況下如果有人偷加key-value是很難用肉眼看出來的，因此我希望能改良成更有組織的程式碼，如下</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">MongoDBObject</span><span class="params">(JSONEncoder)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">default</span><span class="params">(self, o)</span>:</span>
+        <span class="keyword">if</span> isinstance(o, MongoDBObject):
+            <span class="keyword">return</span> o.__dict__
+        <span class="keyword">else</span>:
+            <span class="keyword">raise</span> TypeError(type(o) + <span class="string">" is not MongoDBObject"</span>)
+
+    <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span>
+        self.is_iter = <span class="keyword">True</span>
+        <span class="keyword">return</span> self
+
+    <span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self)</span>:</span>
+        <span class="keyword">if</span> <span class="keyword">not</span> self.is_iter :
+            <span class="keyword">raise</span> StopIteration
+        self.is_iter = <span class="keyword">False</span>
+        docs = self.__dict__
+        ret_dict = dict()
+        <span class="keyword">for</span> key <span class="keyword">in</span> docs:
+            <span class="keyword">if</span> isinstance(docs[key], MongoDBObject):
+                ret_dict[key] = docs[key].__dict__
+            <span class="keyword">else</span>:
+                ret_dict[key] = docs[key]
+        <span class="keyword">return</span> ret_dict
+
+<span class="class"><span class="keyword">class</span> <span class="title">TestObjectA</span><span class="params">(MongoDBObject)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        <span class="keyword">pass</span>
+
+<span class="class"><span class="keyword">class</span>  <span class="title">TestObjectB</span><span class="params">(MongoDBObject)</span>:</span>
+    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>
+        <span class="keyword">pass</span>
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    continue_period = <span class="number">36000</span>
+    current_time = int(time.time())
+
+    test_objectA = TestObjectA()
+
+    test_objectA.id = str(current_time)
+    test_objectA.name = <span class="string">"diinben"</span>
+    test_objectA.begin_time_ts = current_time
+    test_objectA.end_time_ts = current_time + continue_period
+
+    test_objectB = TestObjectB()
+    test_objectB.num1 = <span class="number">50</span>
+    test_objectB.num2 = <span class="number">100</span>
+    test_objectA.test_objectB = test_objectB
+
+    conn = pymongo.MongoClient(host=<span class="string">'localhost'</span>, port=<span class="number">27017</span>)
+    db = conn[<span class="string">'TestDB'</span>]
+    col = db[<span class="string">'TestObjectA'</span>]
+    ret = col.insert(test_objectA)
+    <span class="keyword">print</span> <span class="string">'done: %s'</span> % ret
+</code></pre><p>由於這邊我並沒有在TestObjectA和TestObjectB兩個Class內先定義參數，但是雛型可以看的出來，是可做的到類似C#的概念，不過就像我說的，這段程式碼沒什麼屁用，繞了一大圈寫了一堆程式碼，感覺好像也沒有直接使用dict()來的方便快速。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/C/">C#</a><a href="/Blog/tags/MongoDB/">MongoDB</a><a href="/Blog/tags/Python/">Python</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Blog/2016/02/06/C-To-Python/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/Blog/2016/01/03/2015-To-2016/" title="2015 To 2016" itemprop="url">2015 To 2016</a>
   </h1>
   <p class="article-author">By
@@ -438,65 +572,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/Blog/2015/09/07/Life-after-people/" title="Life after people" itemprop="url">Life after people</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-06T16:05:11.000Z" itemprop="datePublished"> 發表於 2015-09-07</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Life_after_people">Life after people</h2><p>　　這影片一開始雖然假設的不合理,但是其中間的鋪陳又有幾分可信,尤其是利用蘇俄廢棄的大樓,來做為立證更添加了不少真實感,不過我想這部片拍攝的原因應該不是探討這問題,而是再給驕傲的人類一點警訊,從小我就不認為人定勝天,因為我了解人的軟弱和無知,從遠古人類發現火開始,就是想武裝自己,掩飾自己的害怕,像是利用火來照明,驅逐野獸等等…直到現在人類不斷的發明建築、武器、建造水塔等等..其實都是因為懼怕大自然所做出的行為模式.建築我想是從穴居而來的.目的在於抵抗大自然的風雨雷電,武器的發明雖然一部分是抵禦外敵,但是現在的衛星、導彈其實是在防禦外來的隕石以及人類未知的生物,扯的好像有點遠..<br>　　影片中令我印象深刻的部分是植物對建築的侵蝕與佔領,地球上最能主宰地球的,不是有智慧的人類,也不是數量龐大的螞蟻,更不是活的比人類還久的蟑螂,而是屹立不搖的植物,在地球的分類上我想植物才是最高皆,其擁有的適應性不是任何生物能夠批敵的,而其擁有的破壞力也是人類所發明的任何工具無法超越的,試想一個堅硬的水泥建築植物照樣能在上面鑽洞生存,一樣能使之崩姐,人類的水泥山林無法與自然永久並存,但植物卻可以生生不息的與地球共存,地球可以沒有人類但是不能沒有植物.<br>　　我想在人類消失後的這部影片中,作著不斷的將人類認為可以永序的東西,不斷的反駁並提出合理的解釋大自然的反撲方法,像是水壩的水力發電,再工程師的眼裡似乎可以永久的運行,但是影片中就提出,其冷卻水會因為螺類的的繁殖使的水管受阻,進一步讓機體過熱使的機器停止運轉,而無法在發電.人類看似能永久的東西,我想只是在我們腦中極短的時間尺上能運行吧,畢竟人類的歷史也不過短短的3000年,我們始終很難去思考超過百萬年的世界,只能期望在我們有知的歲月中,能看到更長更遠的地球發展.<br>　　最後,看完這部片讓我體會到不少事情,人類只不過是星球輪迴中的一個分支,人類消失後,很快的地球又會找回那原始的狀態,所謂物極必反的道理再適用也不過,姑且不談我們對這地球是破壞還是幫助,但至少我們再地球的歷史上曾經存在過那麼的幾千年,也說不定我們就是地球安排的重要角色之一,很多的可能與不可能,畢竟這個存再那麼久的問題不是三言兩語就能說完的.</p>
-<p>2009-03-22</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/Blog/tags/大學/">大學</a><a href="/Blog/tags/心得/">心得</a><a href="/Blog/tags/環境/">環境</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/Blog/2015/09/07/Life-after-people/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/Blog/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/Blog/page/2/">2</a><a class="page-number" href="/Blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/Blog/page/5/">5</a><a class="extend next" rel="next" href="/Blog/page/5/">Next<span></span></a>
@@ -544,15 +619,23 @@
 			
 		
 			
+				<li><a href="/Blog/tags/golang/" title="golang">golang<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/Blog/tags/嘴砲/" title="嘴砲">嘴砲<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/Blog/tags/Note/" title="Note">Note<sup>2</sup></a></li>
+				<li><a href="/Blog/tags/GCP/" title="GCP">GCP<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/Blog/tags/C/" title="C#">C#<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Note/" title="Note">Note<sup>2</sup></a></li>
 			
 		
 			
@@ -568,19 +651,11 @@
 			
 		
 			
-				<li><a href="/Blog/tags/golang/" title="golang">golang<sup>2</sup></a></li>
+				<li><a href="/Blog/tags/Google-Cloud-Platform/" title="Google Cloud Platform">Google Cloud Platform<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/Blog/tags/環境/" title="環境">環境<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/Blog/tags/Redis/" title="Redis">Redis<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/Blog/tags/PostgresSQL/" title="PostgresSQL">PostgresSQL<sup>1</sup></a></li>
 			
 		
 			
@@ -592,19 +667,19 @@
 			
 		
 			
+				<li><a href="/Blog/tags/PostgresSQL/" title="PostgresSQL">PostgresSQL<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Load-Balancing/" title="Load Balancing">Load Balancing<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Redis/" title="Redis">Redis<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/Blog/tags/擴充方法/" title="擴充方法">擴充方法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/Blog/tags/隨手筆記/" title="隨手筆記">隨手筆記<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/Blog/tags/土壤環境科學系/" title="土壤環境科學系">土壤環境科學系<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/Blog/tags/土壤學/" title="土壤學">土壤學<sup>1</sup></a></li>
 			
 		
 		</ul>
