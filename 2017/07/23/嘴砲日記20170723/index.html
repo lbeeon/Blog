@@ -4,29 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Sorting with column name | Diin Ben</title>
+    <title>嘴砲日記 | Diin Ben</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Ben">
     
 
     
-    <meta name="description" content="隨手筆記IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫
-var query  = data.OrderBy(p=&amp;gt;p.col1);
-不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你">
+    <meta name="description" content="前些日子有些迷惘，所以中斷了一點時間，因此用一篇嘴砲來抒發一下內心情緒，這次我想要說說台灣的教育，台灣的教育成功嗎？從微薄的起薪到低迷的就業率看來或許有人覺得不太成功，但是如果從蓬勃的社會運動、人權思維，我倒是覺得台灣的教育超級成功，最近我在思考一件事，教育的本質到底是什麼？雖然我還不能完整的闡述一個完整的想法，但是我想藉由這次的文章，看看能不能勾勒出一些形狀，基本上在訂完這個主題的時候，我內心馬">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sorting with column name">
-<meta property="og:url" content="http://lbeeon.github.io/Blog/2015/09/19/Sorting-with-column-name/index.html">
+<meta property="og:title" content="嘴砲日記">
+<meta property="og:url" content="http://lbeeon.github.io/Blog/2017/07/23/嘴砲日記20170723/index.html">
 <meta property="og:site_name" content="Diin Ben">
-<meta property="og:description" content="隨手筆記IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫
-var query  = data.OrderBy(p=&amp;gt;p.col1);
-不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你">
-<meta property="og:updated_time" content="2017-02-12T17:38:59.719Z">
+<meta property="og:description" content="前些日子有些迷惘，所以中斷了一點時間，因此用一篇嘴砲來抒發一下內心情緒，這次我想要說說台灣的教育，台灣的教育成功嗎？從微薄的起薪到低迷的就業率看來或許有人覺得不太成功，但是如果從蓬勃的社會運動、人權思維，我倒是覺得台灣的教育超級成功，最近我在思考一件事，教育的本質到底是什麼？雖然我還不能完整的闡述一個完整的想法，但是我想藉由這次的文章，看看能不能勾勒出一些形狀，基本上在訂完這個主題的時候，我內心馬">
+<meta property="og:updated_time" content="2017-07-23T17:35:27.685Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sorting with column name">
-<meta name="twitter:description" content="隨手筆記IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫
-var query  = data.OrderBy(p=&amp;gt;p.col1);
-不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你">
+<meta name="twitter:title" content="嘴砲日記">
+<meta name="twitter:description" content="前些日子有些迷惘，所以中斷了一點時間，因此用一篇嘴砲來抒發一下內心情緒，這次我想要說說台灣的教育，台灣的教育成功嗎？從微薄的起薪到低迷的就業率看來或許有人覺得不太成功，但是如果從蓬勃的社會運動、人權思維，我倒是覺得台灣的教育超級成功，最近我在思考一件事，教育的本質到底是什麼？雖然我還不能完整的闡述一個完整的想法，但是我想藉由這次的文章，看看能不能勾勒出一些形狀，基本上在訂完這個主題的時候，我內心馬">
 <meta name="twitter:creator" content="@diinben">
 
     
@@ -87,14 +81,14 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/Blog/2015/09/19/Sorting-with-column-name/" title="Sorting with column name" itemprop="url">Sorting with column name</a>
+      <a href="/Blog/2017/07/23/嘴砲日記20170723/" title="嘴砲日記" itemprop="url">嘴砲日記</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-18T17:27:31.000Z" itemprop="datePublished"> 發表於 2015-09-19</time>
+    <time datetime="2017-07-23T15:23:49.000Z" itemprop="datePublished"> 發表於 2017-07-23</time>
     
   </p>
 </header>
@@ -103,98 +97,27 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#隨手筆記"><span class="toc-number">1.</span> <span class="toc-text">隨手筆記</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h2 id="隨手筆記">隨手筆記</h2><p>IQueryable和IEumerable相信是很多開發人員常用到的類別，並配合linq或是lambda來做資料處理，<br>不過每當資料要呈現時，總免不要排個序取個分頁，當欄位是固定的時候或許還能這樣寫</p>
-<pre><code><span class="title">var</span> query  = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt;<span class="title">p</span>.<span class="title">col1</span>)</span>;</span>
-</code></pre><p>不過如果欄位很多樣的時侯就糗了，尤其當要排序的欄位是從client送上來的，多半會傳欄位名稱，無技可施的情況下你可能會寫出這樣的程式碼</p>
-<pre><code><span class="title">switch</span>(colname){
-    <span class="keyword">case</span> col1:
-            query  = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt;<span class="title">p</span>.<span class="title">col1</span>)</span>;</span>
-            break;
-    <span class="keyword">case</span> col2:
-            query  = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt;<span class="title">p</span>.<span class="title">col2</span>)</span>;</span>
-            break;
-    ......
-    <span class="default"><span class="keyword">default</span>:</span>
-            query = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">p</span>=&gt; <span class="title">p</span>.<span class="title">id</span>)</span>;</span>
-}
-</code></pre><p>這時侯你就會希望linq本身提供的排序要是也能吃欄位名稱就好了…</p>
-<p>當然我也是不例外，linq不吃字串排序使用起來實在是太不直覺了，還好皇天不負苦心人，終於讓我在<a href="http://google.com" target="_blank" rel="external">google</a>,<a href="http://stackoverflow.com" target="_blank" rel="external">stackoverflow</a>的問題海中找到了，這篇主要就是要記錄這段短小精悍的程式碼，不過一開始提到的IQueryable和IEumerable的實作上是有一些差異，不囉嗦看程式碼</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> LinqExtensions
-{
+		<p>　　前些日子有些迷惘，所以中斷了一點時間，因此用一篇嘴砲來抒發一下內心情緒，這次我想要說說台灣的教育，台灣的教育成功嗎？從微薄的起薪到低迷的就業率看來或許有人覺得不太成功，但是如果從蓬勃的社會運動、人權思維，我倒是覺得台灣的教育超級成功，最近我在思考一件事，教育的本質到底是什麼？雖然我還不能完整的闡述一個完整的想法，但是我想藉由這次的文章，看看能不能勾勒出一些形狀，基本上在訂完這個主題的時候，我內心馬上就出現了現在社會存在的矛盾例子，</p>
+<pre><code><span class="keyword">*</span>場景一：某某企業說，現在大學畢業的學生進入職場完全沒有競爭力，所以政府應該調整課綱以利學生畢業之後能有競爭力。  
 
-    <span class="keyword">public</span> <span class="keyword">static</span> IOrderedQueryable&lt;T&gt; OrderBy&lt;T&gt;(<span class="keyword">this</span> IQueryable&lt;T&gt; <span class="keyword">source</span>, string propertyName)
-    {
-        <span class="keyword">return</span> (IOrderedQueryable&lt;T&gt;)OrderBy((IQueryable)<span class="keyword">source</span>, propertyName);
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IQueryable OrderBy(<span class="keyword">this</span> IQueryable <span class="keyword">source</span>, string propertyName)
-    {
-
-        var x = Expression.Parameter(<span class="keyword">source</span>.ElementType, <span class="string">"x"</span>);
-
-        var selector = Expression.Lambda(Expression.PropertyOrField(x, propertyName), x);
-
-        <span class="keyword">return</span> <span class="keyword">source</span>.Provider.CreateQuery(
-
-            Expression.<span class="keyword">Call</span>(typeof(Queryable),
-                            <span class="string">"OrderBy"</span>,
-                            <span class="keyword">new</span> Type[] { <span class="keyword">source</span>.ElementType, selector.Body.Type },
-                            <span class="keyword">source</span>.Expression, selector));
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IOrderedQueryable&lt;T&gt; OrderByDescending&lt;T&gt;(<span class="keyword">this</span> IQueryable&lt;T&gt; <span class="keyword">source</span>, string propertyName)
-    {
-        <span class="keyword">return</span> (IOrderedQueryable&lt;T&gt;)OrderByDescending((IQueryable)<span class="keyword">source</span>, propertyName);
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IQueryable OrderByDescending(<span class="keyword">this</span> IQueryable <span class="keyword">source</span>, string propertyName)
-    {
-
-        var x = Expression.Parameter(<span class="keyword">source</span>.ElementType, <span class="string">"x"</span>);
-
-        var selector = Expression.Lambda(Expression.PropertyOrField(x, propertyName), x);
-
-        <span class="keyword">return</span> <span class="keyword">source</span>.Provider.CreateQuery(
-
-            Expression.<span class="keyword">Call</span>(typeof(Queryable),
-                            <span class="string">"OrderByDescending"</span>,
-                            <span class="keyword">new</span> Type[] { <span class="keyword">source</span>.ElementType, selector.Body.Type },
-                            <span class="keyword">source</span>.Expression, selector));
-    }
-}
-</code></pre><p>有了這個上面這段程式碼就可以直接寫成</p>
-<pre><code><span class="title">var</span> query = <span class="typedef"><span class="keyword">data</span>.<span class="type">OrderBy</span><span class="container">(<span class="title">colname</span>)</span>;</span>
-</code></pre><p>網路上有很多種寫法，不過這種目前應該是最佳解，理由是，很多的OrderBy的寫法都是直接回傳IQueryable，而直接回傳IQueryable也沒有不好，不過你會無法接著使用ThenBy、ThenByDescending的方法。另外，當你將IQueryable實體化的時候，資料就變成了List，但是很多時候你要排序的結果都是List Array，而上面的方法就無法使用了，因此我就依樣畫葫替IEnumerable寫一段<del>請小心服用</del>，</p>
-<pre><code>    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">LinqExtensions</span>
-{
-        <span class="keyword">public</span> <span class="keyword">static</span> IOrderedEnumerable&lt;TSource&gt; OrderBy&lt;TSource&gt;
-                                                (<span class="keyword">this</span> IEnumerable&lt;TSource&gt; source, <span class="keyword">string</span> propertyName)
-    {
-
-        PropertyInfo prop = <span class="keyword">typeof</span>(TSource).GetProperty(propertyName);
-        <span class="keyword">if</span> (prop == <span class="keyword">null</span>)
-        {
-            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"No property '"</span> + propertyName + <span class="string">"' in + "</span> + <span class="keyword">typeof</span>(TSource).Name + <span class="string">"'"</span>);
-        }
-        <span class="keyword">return</span> source.OrderBy(x =&gt; prop.GetValue(x, <span class="keyword">null</span>));
-    }
-
-    <span class="keyword">public</span> <span class="keyword">static</span> IOrderedEnumerable&lt;TSource&gt; OrderByDescending&lt;TSource&gt;
-                                                (<span class="keyword">this</span> IEnumerable&lt;TSource&gt; source, <span class="keyword">string</span> propertyName)
-    {
-        PropertyInfo prop = <span class="keyword">typeof</span>(TSource).GetProperty(propertyName);
-        <span class="keyword">if</span> (prop == <span class="keyword">null</span>)
-        {
-            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"No property '"</span> + propertyName + <span class="string">"' in + "</span> + <span class="keyword">typeof</span>(TSource).Name + <span class="string">"'"</span>);
-        }
-        <span class="keyword">return</span> source.OrderByDescending(x =&gt; prop.GetValue(x, <span class="keyword">null</span>));
-    }
-}
-</code></pre><p>藉由這兩個擴充方法，你就可以在linq中展現各種排序神技。<a href="https://github.com/lbeeon/LinqExtensions" target="_blank" rel="external">(GitHub)</a></p>
+<span class="keyword">*</span>場景二：某某學生說反正大學畢業也是22K，況且比爾蓋茲和賈伯斯大學都沒畢業，所以我覺得讀書沒用。
+</code></pre><p>兩個不同身分角色似乎都對台灣現況的教育很不滿意，再繼續下去之前我想要簡單的分析一下這兩個立場的想法，以企業的角度，學生在經由一連串的國民義務教育之後，必須具備有進入職場工作的能力，換言之，政府應該代替企業以教育為手段訓練人才替企業省下人事訓練的費用，基本上如果我是勞工，我絕對說這是個慣老闆，那如果以學生的觀點來看，我已經學會各種知識學問，企業只願意花22K雇用是有病？我浪費了十幾年讀書考試，換來這樣的東西根本不值得，基本上如果我是老闆，我只會說你學的東西就不是企業所需求，我當然只能比較低微的報酬。<br>　　那這兩個到底誰對誰錯呢？以及為何基礎九年國民教育，乃至之後的大學以及碩、博士的教育，所提供的給學生的能力，和社會所期待畢業生該具備的東西有如此大的落差呢？希望在接下來的文章我可以慢慢的抽絲剝繭將一些似是而非的東西釐清。<br>　　在我來看其實這兩個立場我覺得都沒錯，那會造成這種落差的原因到底是什麼?經過我思考後我發現一件事，那就是大家對教育的期待以及所懷抱的憧憬是不是太多？到底是什麼理由讓教育背負這麼多的期望？我想了很久突然一段話讓我有了想法</p>
+<pre><code>        《勸學詩》
+富家不用買良田，書中自有千鍾粟。
+安居不用架高堂，書中自有黃金屋。
+娶妻莫愁無良媒，書中有女顏如玉。
+出門莫愁無人隨，書中車馬多如簇。
+男兒欲遂平生志，五經勤向窗前讀。
+</code></pre><p>這裡的<strong>書中</strong>是指教育嗎？又或者你我都將書本知識視為是教育的一部分呢？我想多讀書能讓你更有競爭力，有競爭力當然能獲得更多的成就與報酬這是對的，但是這樣一個結果是國家義務教育所應該提供或是具備的功能嗎？我想這答案是否定的，在我看來我們所泛指的教育應該是</p>
+<pre><code><span class="number">1.</span> 教育須讓人有分辨是非對錯的能力
+<span class="number">2.</span> 教育須讓人有基本獲取知識的能力
+<span class="number">3.</span> 教育須讓人有基本國家和民族意識
+<span class="number">4.</span> 教育須讓人有思想知道為何而存在
+</code></pre><p>大家知道「授人以魚，不如授人以漁」，我想教育的功能也是如此，當你受過教育表示你有能力去分辨是非對錯，就像是同志婚姻權利的爭取，兩人了相愛與否不該因為性別而有所差異(雖然我還是不太能接受，不過這是個人好惡的問題，我不想引戰)，不過因為受過教育讓我知道這個權力應是人生就該賦予，我知道中華民國就是中華民國，它和中華人民共和國是不一樣的，不論什麼原因理由，我們都應該以身為中華民國國民為榮，在外如有不公正的評論我們就有責任和義務去捍衛我們的國家，教育讓我知道，現在我在職場上能力有所不足，所以我應該再去書本多充實自我，相對教育也讓我有能力去教導提拔那些未來的中流砥柱，最後，因為有教育讓我能有思想，並且試著去分析社會的現象，哪些可能是人為刻意的操弄，哪些才是我們該堅守的原則，什麼東西是可以犧牲？什麼東西是不可碰觸的底線，一切的一切都是受過教育後所賦予我的能力，我很高興我受過這樣的教育，我也認為台灣的教育其實比你我想像中的都還要來的好，發完牢騷明天繼續上班吧。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -203,7 +126,7 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 
   <div class="article-tags">
   
-  <span></span> <a href="/Blog/tags/C/">C#</a><a href="/Blog/tags/擴充方法/">擴充方法</a><a href="/Blog/tags/隨手筆記/">隨手筆記</a>
+  <span></span> <a href="/Blog/tags/嘴砲/">嘴砲</a><a href="/Blog/tags/日記/">日記</a>
   </div>
 
 </div>
@@ -212,7 +135,7 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://lbeeon.github.io/Blog/2015/09/19/Sorting-with-column-name/" data-title="Sorting with column name | Diin Ben" data-tsina="undefined" class="share clearfix">
+	  <div data-url="http://lbeeon.github.io/Blog/2017/07/23/嘴砲日記20170723/" data-title="嘴砲日記 | Diin Ben" data-tsina="undefined" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -225,19 +148,11 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/Blog/2015/11/09/Shakespeare/" title="Shakespeare">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Shakespeare</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/Blog/2015/09/14/Soil-Science/"  title="Soil Science">
+<a href="/Blog/2017/05/28/google-cloud-load-balancing/"  title="Google Cloud Load Balancing">
  <strong>下一篇：</strong><br/> 
- <span>Soil Science
+ <span>Google Cloud Load Balancing
 </span>
 </a>
 </div>
@@ -258,7 +173,7 @@ var query  = data.OrderBy(p=&amp;gt;p.col1);
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#隨手筆記"><span class="toc-number">1.</span> <span class="toc-text">隨手筆記</span></a></li></ol>
+ 
  
   </div>
 
