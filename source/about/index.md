@@ -22,8 +22,15 @@ date: 2015-09-05 01:48:13
 - 國立板橋高級中學 (2004 ~ 2007)
 
 ## 經歷
-- MeepShop-Backend Engineer(2016/6 ~ Now)
- -
+- Trend Micro-Senior Engineer(2017/12 ~ Now)
+ - DevOps
+ - Amazon Web Service. (cloudformation, opsworks, lambda, sqs, sns etc...)
+ 
+- MeepShop-Backend Engineer(2016/6 ~ 2017/11)
+ - Google Cloud Platform. (pubsub, datastore, spanner, bigquery etc...)
+ - Microservice develop. (golang, javascript)
+ - Docker, protobuf, k8s
+ 
 - 鈊象電子-軟體工程師 (2014/12 ~ 2016/5)
  - 資料處理
  - 資料報表分析
