@@ -1,0 +1,566 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Intro &amp; BigQuery | Diin Ben</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Ben">
+    
+
+    
+    <meta name="description" content="Intro　　想想到meepshop也將在這個月底滿一年了，在這過去一年多內學了不少新東西，也玩了不少服務，不過主要都是以GCP(Google Cloud Platform)的服務為主，因此，接下來幾篇文章都會聚焦在這些服務上，也算是一個簡短的工作回顧吧，至於我有用過哪些服務呢(這邊以有用過SDK為主)，以下簡單列舉一下  BigQuery Storage Datastore Spanner SQ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Intro &amp; BigQuery">
+<meta property="og:url" content="http://lbeeon.github.io/Blog/2017/05/07/BigQuery/index.html">
+<meta property="og:site_name" content="Diin Ben">
+<meta property="og:description" content="Intro　　想想到meepshop也將在這個月底滿一年了，在這過去一年多內學了不少新東西，也玩了不少服務，不過主要都是以GCP(Google Cloud Platform)的服務為主，因此，接下來幾篇文章都會聚焦在這些服務上，也算是一個簡短的工作回顧吧，至於我有用過哪些服務呢(這邊以有用過SDK為主)，以下簡單列舉一下  BigQuery Storage Datastore Spanner SQ">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2017-05-07T09:19:52.000Z">
+<meta property="article:modified_time" content="2021-08-29T15:28:16.643Z">
+<meta property="article:author" content="Ben">
+<meta property="article:tag" content="BigQuery">
+<meta property="article:tag" content="Google Cloud Platform">
+<meta property="article:tag" content="GCP">
+<meta property="article:tag" content="golang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@diinben">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Diin Ben" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/Blog/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/Blog/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/Blog/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+<link rel="stylesheet" href="/Blog/%02.css">
+<link rel="stylesheet" href="/Blog/.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/Blog/"><img src="/Blog/img/logo.png" alt="Diin Ben" title="Diin Ben"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/Blog/" title="Diin Ben">Diin Ben</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/Blog/">Home</a></li>
+					
+						<li><a href="/Blog/archives">Archives</a></li>
+					
+						<li><a href="/Blog/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:lbeeon.github.io/Blog">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Blog/2017/05/07/BigQuery/" title="Intro &amp; BigQuery" itemprop="url">Intro &amp; BigQuery</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2017-05-07T09:19:52.000Z" itemprop="datePublished"> 發表於 2017-05-07</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目錄</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BigQuery"><span class="toc-number">2.</span> <span class="toc-text">BigQuery</span></a></li></ol>
+		
+		</div>
+		
+		<h3 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h3><p>　　想想到meepshop也將在這個月底滿一年了，在這過去一年多內學了不少新東西，也玩了不少服務，不過主要都是以GCP(Google Cloud Platform)的服務為主，因此，接下來幾篇文章都會聚焦在這些服務上，也算是一個簡短的工作回顧吧，至於我有用過哪些服務呢(這邊以有用過SDK為主)，以下簡單列舉一下</p>
+<ul>
+<li>BigQuery</li>
+<li>Storage</li>
+<li>Datastore</li>
+<li>Spanner</li>
+<li>SQL(Postgres)</li>
+<li>PubSub</li>
+<li>Networking(DNS, loadbalance etc…)   </li>
+</ul>
+<p>以上這些服務基本上都是以golang作為開發主要語言，因此，之後的介紹也應該會是圍繞在如何操作SDK，並配合簡單範例以供參考，廢話不多說直接來進入主題吧。</p>
+<h3 id="BigQuery"><a href="#BigQuery" class="headerlink" title="BigQuery"></a>BigQuery</h3><p>　　為什麼第一篇選擇介紹BigQuery呢？原因無它，因為她是我第一個用的GCP服務，簡單介紹一下什麼BigQuery，BigQuery是Google提供的一個服務，主要是用來統計大量的資料，特別的是它支援NoSQL的資料結構同時又能使用SQL like的語法查詢，因此可以說是相當強大，猶豫敝公司所使用的是NoSQL資料庫，因此，看到這些支援的特色整個就是很合胃口，所以公司就委託小弟我去簡單研究一下，在正式進入程式碼之前還有一個東西要提一下，就是Goolge的SDK貌似有兩種，一種是<a target="_blank" rel="noopener" href="https://github.com/GoogleCloudPlatform/google-cloud-go">google/google-api-go-client</a>，另一種則是<a target="_blank" rel="noopener" href="https://github.com/google/google-api-go-client">GoogleCloudPlatform/google-cloud-go</a>的版本，那麼這兩種有什麼差別呢？簡單來說google開頭的repos包含了所有google所提供的服務api-sdk，像是translate、drive以及GCP上面有提供的BigQuery、Datastore等等，而另外一個GoogleCloudPlatform開頭的，感覺比較像是將前面那一個SDK和一些語言本身的使用習慣wrap之後的SDK，因此，使用上相對會比較簡單，而在GCP的官方教學內容，大部分也都是以GoogleCloudPlatform為主，不過身為一個硬派玩家，只使用GoogleCloudPlatform的開發工具，有很多事情似乎辦不到，以BigQuery來說好了，如果你想要在程式裡面使用<a target="_blank" rel="noopener" href="https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions">UDF</a>的話，在GoogleCloudPlatform的SDK上是完全沒有辦法，不能的理由也非常簡單就是他根本沒有實作這個部分，因此，我一開始也是看官方推薦使用，但是在開發產品的時候才會發現，基本上要用的功能想要什麼就沒什麼，所以我這邊才會找到另外一個google-api-go-client的repos，不過如果你需要僅是非常基本的功能，那照著官方的文件應該就可以滿足你的需求，不過這邊主要還是要介紹比較底層SDK的使用方法，再來就簡單敘述一下怎麼使用這SDK吧。<br>  　<br>   這邊介紹一下整個範例程式的架構，簡單來說就是先建立一個BigQuery的client，再來就是到BigQuery建立一個要執行的Job並展示結果，詳細程式碼我最後會附上連結</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">	<span class="comment">// create a bigquery client</span></span><br><span class="line">	jwtConfig, <span class="keyword">err</span> := NewJWTConfig()</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">err</span> != nil &#123;</span><br><span class="line">		<span class="keyword">log</span>.Fatalln(<span class="keyword">err</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	client := jwtConfig.Client(context.Background())</span><br><span class="line">	bigqueryService, <span class="keyword">err</span> := bigquery.New(client)</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">err</span> != nil &#123;</span><br><span class="line">		<span class="keyword">log</span>.Fatalln(<span class="keyword">err</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// create a jobsService</span></span><br><span class="line">	jobsService = bigquery.NewJobsService(bigqueryService)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// create an async job</span></span><br><span class="line">	jobId, <span class="keyword">err</span> := jobInsert(cmd)</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">err</span> != nil &#123;</span><br><span class="line">		<span class="keyword">log</span>.Fatalln(<span class="keyword">err</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// polling to check status</span></span><br><span class="line">	<span class="keyword">err</span> = jobDone(jobId)</span><br><span class="line">	<span class="keyword">if</span> <span class="keyword">err</span> != nil &#123;</span><br><span class="line">		<span class="keyword">log</span>.Fatalln(<span class="keyword">err</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// get result</span></span><br><span class="line">	jobGetResult(jobId)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>感覺上好像沒有什麼特別，不過和官方教學最大的差異是這裡執行的是一個非同步的Job，而同步和非同步的差別主要是在於執行時所能夠使用的資源和時間，因此如果你想要分析上百GB的資料，官方提供的方法是完全不管用的，因為在運算的時候你就會拿到timeout或是response too large的錯誤，這時候如果你看官方資料它會建議你開啟allow large results的選項，不過尷尬的是如果你要用這個功能就必須是一個非同步的Job，而官方的開發文件對這邊對非同步Job幾乎沒有什麼著墨，所以我這邊就當作是分享順便記錄方便之後使用吧。<br>　　要使用原生的api-sdk一開始就是需要建立一個認證連線，這邊我只用的是jwt的方法，配合各個服務所提供credentials來做一個認證，至於這個NewJWTConfig的方法也不是我發明的，而是直接參考GoogleCloudPlatform的認證方法在小改良一下，基本上GCP上面所有的服務如果要使用api-sdk這樣的方式都是通用的，有興趣各位在自己去爬爬原始碼吧，再來是要建立一個新的job</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">func jobInsert(cmd string) (string, error) &#123;</span><br><span class="line">	jobConfigQuery := bigquery.JobConfigurationQuery&#123;</span><br><span class="line">		Query: cmd,</span><br><span class="line">		UserDefinedFunctionResources: []*bigquery.UserDefinedFunctionResource&#123;&amp;bigquery.UserDefinedFunctionResource&#123;</span><br><span class="line">			InlineCode: `</span><br><span class="line">				<span class="keyword">function</span> Calendar(<span class="keyword">row</span>, emit)&#123;</span><br><span class="line">					var startTime = <span class="built_in">new</span> <span class="type">Date</span>(<span class="keyword">row</span>.<span class="keyword">start</span>*<span class="number">1000</span>), endTime = <span class="built_in">new</span> <span class="type">Date</span>(<span class="keyword">row</span>.<span class="keyword">end</span>*<span class="number">1000</span>);</span><br><span class="line">					<span class="keyword">while</span>(endTime &gt; startTime)&#123;</span><br><span class="line">						emit(&#123;YEAR: startTime.getUTCFullYear(), MONTH: startTime.getUTCMonth()+<span class="number">1</span>, Day: startTime.getUTCDate(), Hour: startTime.getUTCHours()&#125;);</span><br><span class="line">						startTime.setTime(startTime.getTime()+<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				bigquery.defineFunction(</span><br><span class="line">					<span class="string">&#x27;Calendar&#x27;</span>,                           // <span class="type">Name</span> <span class="keyword">of</span> the <span class="keyword">function</span> exported <span class="keyword">to</span> <span class="keyword">SQL</span></span><br><span class="line">					[<span class="string">&#x27;start&#x27;</span>, <span class="string">&#x27;end&#x27;</span>],                    // Names <span class="keyword">of</span> <span class="keyword">input</span> <span class="keyword">columns</span></span><br><span class="line">					[&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;YEAR&#x27;</span>, <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;integer&#x27;</span>&#125;,  // Output <span class="keyword">schema</span></span><br><span class="line">					 &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;MONTH&#x27;</span>, <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;integer&#x27;</span>&#125;,</span><br><span class="line">					 &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Day&#x27;</span>, <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;integer&#x27;</span>&#125;,</span><br><span class="line">					 &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Hour&#x27;</span>, <span class="string">&#x27;type&#x27;</span>: <span class="string">&#x27;integer&#x27;</span>&#125;</span><br><span class="line">					],</span><br><span class="line">					Calendar                       // Reference <span class="keyword">to</span> JavaScript UDF</span><br><span class="line">				);`,</span><br><span class="line">		&#125;&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">	jobConfig := bigquery.JobConfiguration&#123;Query: &amp;jobConfigQuery&#125;</span><br><span class="line"></span><br><span class="line">	result, err := jobsService.<span class="keyword">Insert</span>(projectID, &amp;bigquery.Job&#123;<span class="keyword">Configuration</span>: &amp;jobConfig&#125;).<span class="keyword">Do</span>()</span><br><span class="line">	<span class="keyword">if</span> err != nil &#123;</span><br><span class="line">		<span class="keyword">return</span> &quot;&quot;, err</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result.JobReference.JobId, nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>要建立一個非同步的job最重要的事情就是要建立一個JobConfigurationQuery的條件，說真如果只憑GoDoc上面的說明要產生上面的程式根本是天方夜譚，我個人認為是不可能，因為所有api-sdk的文件都是機器產生出來的，所以教學範例也少的可憐，基本上能有這段程式碼，我是藉由google console所送出的封包，反向推敲才設定出來的結果，真的可以說是行行皆辛苦，如果你僅需要執行一個耗時很久查詢，而沒有需要UDF，基本上你可以直接把UserDefinedFunctionResources這東西整個拿掉，其實這整篇的重點有70%就是在這個JobConfigurationQuery的設置，至於後面的job的狀態和資料的讀取就請大家直接看原始碼吧，最後附上<a target="_blank" rel="noopener" href="https://github.com/lbeeon/demo-bigquery">範例程式</a>。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/BigQuery/">BigQuery</a><a href="/Blog/tags/Google-Cloud-Platform/">Google Cloud Platform</a><a href="/Blog/tags/GCP/">GCP</a><a href="/Blog/tags/golang/">golang</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://lbeeon.github.io/Blog/2017/05/07/BigQuery/" data-title="Intro &amp; BigQuery | Diin Ben" data-tsina="undefined" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/Blog/2017/05/28/google-cloud-load-balancing/" title="Google Cloud Load Balancing">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Google Cloud Load Balancing</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/Blog/2017/05/01/dockerize-database/"  title="Dockerize Database">
+ <strong>下一篇：</strong><br/> 
+ <span>Dockerize Database
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目錄</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intro"><span class="toc-number">1.</span> <span class="toc-text">Intro</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BigQuery"><span class="toc-number">2.</span> <span class="toc-text">BigQuery</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+			<li><a href="/Blog/categories/文學/" title="文學">文學<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/Blog/tags/日記/" title="日記">日記<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/心得/" title="心得">心得<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/大學/" title="大學">大學<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/旅遊/" title="旅遊">旅遊<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/嘴砲/" title="嘴砲">嘴砲<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/golang/" title="golang">golang<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Google-Cloud-Platform/" title="Google Cloud Platform">Google Cloud Platform<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/GCP/" title="GCP">GCP<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/C/" title="C#">C#<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/MongoDB/" title="MongoDB">MongoDB<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/IGS/" title="IGS">IGS<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/環境/" title="環境">環境<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Note/" title="Note">Note<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Docker/" title="Docker">Docker<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/思想/" title="思想">思想<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/土壤學/" title="土壤學">土壤學<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/BigQuery/" title="BigQuery">BigQuery<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Python/" title="Python">Python<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/土壤環境科學系/" title="土壤環境科學系">土壤環境科學系<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/農業/" title="農業">農業<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Agriculture &amp; Environment &amp; Programing &amp; Literature <br/>
+			“Reading Maketh a Full Man; Conference a Ready Man; Writing an Exact Man” Francis Bacon.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/lbeeon" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/diinben" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/lbeeon" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/lbeeon" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		
+		
+		<a href="mailto:lbeeon@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		
+		<a href="/Blog/about" target="_blank" title="Ben">Ben</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/Blog/js/jquery-2.0.3.min.js"></script>
+<script src="/Blog/js/jquery.imagesloaded.min.js"></script>
+<script src="/Blog/js/gallery.js"></script>
+<script src="/Blog/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'lbeeon';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/Blog/img/scrollup.png"/></a>
+	</div>
+	<script src="/Blog/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

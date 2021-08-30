@@ -1,0 +1,774 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Diin Ben</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Ben">
+    
+
+    
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Diin Ben">
+<meta property="og:url" content="http://lbeeon.github.io/Blog/page/2/index.html">
+<meta property="og:site_name" content="Diin Ben">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="Ben">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@diinben">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Diin Ben" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/Blog/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/Blog/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/Blog/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/Blog/css/style.css">
+<link rel="stylesheet" href="/Blog/%02.css">
+<link rel="stylesheet" href="/Blog/.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/Blog/"><img src="/Blog/img/logo.png" alt="Diin Ben" title="Diin Ben"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/Blog/" title="Diin Ben">Diin Ben</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/Blog/">Home</a></li>
+					
+						<li><a href="/Blog/archives">Archives</a></li>
+					
+						<li><a href="/Blog/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:lbeeon.github.io/Blog">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Blog/2017/03/26/docker-mysql-phpmyadmin/" title="docker-mysql-phpmyadmin" itemprop="url">docker-mysql-phpmyadmin</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-26T14:00:07.000Z" itemprop="datePublished"> 發表於 2017-03-26</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Dockerize-your-mysql-amp-phpmyadmin"><a href="#Dockerize-your-mysql-amp-phpmyadmin" class="headerlink" title="Dockerize your mysql &amp; phpmyadmin"></a>Dockerize your mysql &amp; phpmyadmin</h2><p>　　最近email從遠方捎來的一個訊息，就是很久以前我在別人的Blog上的留言居然有人回復了!! <a target="_blank" rel="noopener" href="http://omarghader.github.io/docker-tutorial-phpmyadmin-and-mysql-server/">那篇文章</a>其實就是一個Docker的教學，教學內容簡單說就是分別起一個mysql和一個phpmyadmin的image並且能用phpmyadmin訪問，那篇的文章其實寫得還算OK，但是他用的image版本似乎不是官方的，而且照著弄也會有錯誤，而回應我的答案也是怪怪的感覺走歪掉(要我bash連進去mysql，再跑個sql改個帳號密碼什麼的)，所以開一篇記錄一下，怎麼用兩行指令就起一個mysql+phpmyadmin的服務。</p>
+<pre><code>docker run --name mysql -e MYSQL_ROOT_PASSWORD=0000 -d mysql
+docker run --name myadmin -d --link mysql:db -p 8080:80 phpmyadmin/phpmyadmin
+</code></pre>
+<p>執行之後就可以直接用瀏覽器連上localhost:8080。其實這個問題我已經在我看完官方的文件後就已經解決了，不過如果臨時要我起一個可能還是要再查一下，所以乾脆開一篇記錄一下方便以後使用。　</p>
+<p><strong>ps: root/0000</strong></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/Note/">Note</a><a href="/Blog/tags/Docker/">Docker</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Blog/2017/03/26/docker-mysql-phpmyadmin/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Blog/2017/03/20/bangkok-independent-travel-IV/" title="曼谷自由行" itemprop="url">曼谷自由行</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-20T15:40:38.000Z" itemprop="datePublished"> 發表於 2017-03-20</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="曼谷自由行IV"><a href="#曼谷自由行IV" class="headerlink" title="曼谷自由行IV"></a>曼谷自由行IV</h2><h3 id="1-30"><a href="#1-30" class="headerlink" title="1/30"></a>1/30</h3><p>　　這天算是在曼谷的最後一天，依照一開始始排的行程，這天就只有兩件事，一個是去購物，另一個則是去一間餐廳吃飯，還記得前一天有提到，此時此刻的我盤纏幾乎用盡，況且昨天也去過Big C購物了，另外我兄弟一堆的泰銖還在愁不知道怎麼花完，於是他提議要去做高級的按摩，但是小弟我真的是不想再換錢了，於是我便提議，早上我們就各玩各的，到晚上再一起約餐廳吃飯，因此前一天晚上我就開始做功課，看看還有什麼是大家來曼谷都會去，我還沒有去朝聖的地方，因此，最後一天我就像個背包客似的一人走在曼谷的街上。<br>  　最後一天的第一站我選擇去水門市場（Platinum Market），理由無它，就是我想先去吃一下大家口中說的海南雞飯，更精確的說，是觀光客都會吃的海南雞飯!!!<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0832.JPG" width="50%" alt="Chicken rice" title="Chicken rice"></p>
+<p>   不得不說我運氣不錯，也可以說是早起的鳥兒有蟲吃，一開始沒什麼人群，隨著時間越來越接近中午，人潮突然湧現啊!!!還好我已經排在很前面了，不然沒弄好這間店就是我曼谷最後一個景點了…不過說實在的東西沒有讓我特別驚豔，但有一個東西我倒是印象很深刻，就是地板超級無敵油，一不小心就會滑倒那種，奉勸各位要前往之前先換雙好鞋。<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0833.JPG" width="50%" alt="Chicken rice" title="Chicken rice"></p>
+<p>   酒足飯飽之後就開始重頭戲了，根據可靠消息指出水門市場就是五分埔超大版!!!身為背包客的我當然不可能錯過拉，於是快速前往目的地，距離大概就是海南雞飯過個馬路這麼遠，一到附近就先被超大的Platinum Fashion Mall吸引到目光，<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0839.JPG" width="50%" alt="Platinum Market" title="Platinum Market"></p>
+<p>   但是身為深度旅遊愛好者的我怎麼可能會去逛百貨公司呢，於是我就選擇先從對面的真·水門市場下手，不過這邊我也只顧著逛街沒什麼照片，所以只好口述一下我的記憶，這個號稱是超大版五分埔果然是名不虛傳，一開始我還有點擔心，因為去過五分埔的人都知道，整個商圈有賣男性衣物的店面少的可憐，不過水門市場可就不同了，男性也不用擔心，絕對是可以讓你買到手軟，一件T80泰銖，褲子150泰銖，要不是我身上錢剩沒多少，真想看到什麼買什麼，逛的過程中我也有發現，感覺很多賣衣物的也是在這邊批貨，可說是泰國潮牌的集散地，因此我建議，想買衣服的人直接來就對了，什麼洽圖洽市集的衣服都不見得有這邊便宜，至於有攜帶女伴的，我也要奉勸這個地方絕對是禁地，我想只要是雌性生物靠近這個市集，基本上你今天的行程就已經結束了!!!由於水門市場真的是太大了，隨便逛一下就花了我幾個小時(在市場裡面我還鬼打牆)，出了市場本來想找個地方耍廢等晚上，但是百貨公司都在眼前了，於是我硬是拖著我蹣跚的腳步，再度攻略水門百貨公司!!!這個百貨公司也真是夠大，不過說真的沒有太多記憶點，賣的服飾其實水門市場中大部分都找的到，畢竟這裡的商家也都是從市場內搬遷過來的，不過不知道是不是店租比較貴，價格就沒那麼平易近人了。</p>
+   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0835.JPG" width="50%" alt="Platinum Market" title="Platinum Market">
+   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0843.JPG" width="50%" alt="Platinum Market" title="Platinum Market">
+
+<p>   由於此時的時間有點尷尬，因為晚點我還要去拿衣服XD，因此我只好開始回頭往BTS前進，走著走著看到轉角聚集著一群人，於是我便好奇的過湊湊熱鬧，原來是鼎鼎大名的四面佛~~不過在台灣聽過很多傳聞，就是四面佛很靈，而且一定要記得還願，不然就會怎樣怎樣的…因此我僅抱著誠摯的心拜幾下就離去，心中完全沒有任何請求XD。<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0848.JPG" width="50%" alt="Platinum Market" title="Platinum Market"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0849.JPG" width="50%" alt="Platinum Market" title="Platinum Market"></p>
+<p>   看著時間其實也四點多了，於是我就搭著BTS來到Nana站，準備拿我此趟最重要的戰利品!!!由於約的時間是大概六點，而且我的腳已經被水門市場摧殘的不在話下，所以我就隨便找了個酒吧，點一杯啤酒優閒的看一下曼谷的街景，<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0854.JPG" width="50%" alt="Nana" title="Nana"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0852.JPG" width="50%" alt="Nana" title="Nana"></p>
+<p>   是時候該面對了，帶著一點酒氣，但是完全沒有醉意的我走向西服店，開始試穿囉!!!<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0858.JPG" width="50%" alt="Nana" title="Nana"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0860.JPG" width="50%" alt="Nana" title="Nana"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0862.JPG" width="50%" alt="Nana" title="Nana"></p>
+<p>   重要的事情終於都搞定，該前往最後的附約了，不知我兄弟今天爽的如何，我想照篇應該是可以說明一切，</p>
+   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0865.JPG" width="50%" alt="A No Other Hound" title="A No Other Hound">   
+   
+<p>這間餐廳我也不懂有什麼特別的點一定要來吃，於是我就問問我的兄弟，你為啥要選這間餐廳，他居然跟我說網路上有人說所以就來了wtf…不過這間餐廳完全就是吃氣氛的，一個露天的用餐區，旁間就是大馬路，一種世外桃源的感覺??餐點內容個人是覺得一般般，不過因為價格也不算貴，大概就是台灣貴一點的簡餐價格吧，不過也是有高檔牛排，一客幾千的那種，至於客官們要不要來就自行決定吧。<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0863.JPG" width="50%" alt="A No Other Hound" title="A No Other Hound"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0872.JPG" width="50%" alt="A No Other Hound" title="A No Other Hound"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0874.JPG" width="50%" alt="A No Other Hound" title="A No Other Hound"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0878.JPG" width="50%" alt="A No Other Hound" title="A No Other Hound"></p>
+<h3 id="1-31"><a href="#1-31" class="headerlink" title="1/31"></a>1/31</h3><p>　　其實這天行程大概就是搭飛機回台灣，飛機上睡個覺沒什麼好說的，不過還是有件事可以拿來說說，就是曼谷的交通很恐怖，尤其是上班時間，我兩在前一天晚上就為了要怎麼去機場討論了很久，最後決定搭BTS轉Express，完美的規劃想不到BTS根本上不去啊!!!一連等了5~6台，不要說行李要搬上去，就連要擠上幾個人都很免強，於是乎我提議還是坐計程車吧，不過計程車也還是很塞，一路上我們還擔心會不會趕不上飛機，所幸一離開市區之後路況就好很多。<br>  有個東西我覺得還是要提一下，就是我在機場發現好吃的東西，就是安妮阿姨(Auntie Anne’s)!!!<br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0892.JPG" width="50%" alt="Auntie Anne's" title="Auntie Anne's"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0893.JPG" width="50%" alt="Auntie Anne's" title="Auntie Anne's"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0894.JPG" width="50%" alt="Auntie Anne's" title="Auntie Anne's"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0895.JPG" width="50%" alt="Auntie Anne's" title="Auntie Anne's"><br>   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0896.JPG" width="50%" alt="Auntie Anne's" title="Auntie Anne's"></p>
+<p>  這東西真是太邪惡了，怎麼可以這麼好吃，吃完我馬上Google了一下，發現台灣也有!!!找個時間我一定要再去吃一下。</p>
+<h3 id="後續"><a href="#後續" class="headerlink" title="後續"></a>後續</h3><p>　　在寫這篇的時候看著照片還是有想起當下的心情，整趟下來除了吃喝玩樂，我內心還是有不少心得，第一個就是讓我真的見識到何謂國際型大城市，不說別的，光從換匯這件事就可以知道，曼谷國際化的程度，隨處可見的換匯小舖，讓你不用擔心在泰國沒錢花，另外，在曼谷的這幾天可以很明顯的感受到，曼谷正在快速的發展中，從到處林立的大型百貨公司，以及隨處可見建案，各式各樣的硬體設施幾乎都是最新最先進的，但比較衝突的地方就是當地的居民，只能說建設容易教育難，即便有先進的設施，但是整體人民的教育水準似乎還差了一點，我這邊是以台北和曼谷來做比較，我的英文稱不上是好，但是基本的溝通還不是問題，不過在曼谷常常還是讓我感到挫折，整體而言我個人主觀認為，會基礎英文泰國人比例可能不到20%，我相信這點台北應該是大勝!!!不過我相信在幾年之後一定又會有劇烈的變化吧，最後檢討一下自己，旅遊過程中雖然我已經盡量放開自我去嘗試一些新事物，不過還有一些沒體驗到的東西現在想起來有點可惜，另外就是，在寫文章的時候我才發現，我的照片真是少的可憐，搞的很多東西我都要用想的，因此下次出國一定要記得多拍一些照片(我就喜歡用眼睛紀錄阿)，不然就是找一個很喜歡拍照的人一起，這樣我應該可以省不少事。總之曼谷自由行成功!!!</p>
+   <img src="/Blog/2017/03/20/bangkok-independent-travel-IV/IMG_0898.JPG" width="50%" alt="Airport" title="Airport">
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/日記/">日記</a><a href="/Blog/tags/旅遊/">旅遊</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Blog/2017/03/20/bangkok-independent-travel-IV/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Blog/2017/03/12/bangkok-independent-travel-III/" title="曼谷自由行" itemprop="url">曼谷自由行</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-12T14:04:58.000Z" itemprop="datePublished"> 發表於 2017-03-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="曼谷自由行III"><a href="#曼谷自由行III" class="headerlink" title="曼谷自由行III"></a>曼谷自由行III</h2><p>這系列拖的有點久，在不快點寫完可能就再也寫不完了…廢話不多說直接進入正文</p>
+<h3 id="1-29"><a href="#1-29" class="headerlink" title="1/29"></a>1/29</h3><p>　　這天我兩兄弟也是起了一大早，今天主要有兩個行程，一個是Sea Life Bangkok Ocean World，另一個是Calypso Cabaret Show，記得我上一篇有說過，這次行程的票券大多是從KKDay上訂購，但是我沒印出來所以還是有點小擔心，不過很快的就拿到票了，所以完全是沒問題!!!說實在，我覺得去一個國家應該就是要去體驗一些特別的在地文化，或者是當地特有的表演什麼的，簡單說就是希望能有個深度的旅遊，而不是走馬看花那種，因此，對於這個海洋館的行程我本身是興趣缺缺，但是一開始我就說行程都交給我兄弟決定，所以我也不想表示太多意見，不過不得在參觀完之後，不得不說這個海洋世界確實是滿有看頭的，但最特別的是，這個海洋世界居然是在一間百貨公司(Siam Paragon)的地下室，這個也太妙了!!!雖然我本人對海洋館的興趣真的是一般般，但是畢竟在去年我也是參與捕魚遊戲的開發，所以對一些魚種也算是略有研究，像是小丑魚、獅子魚、劍鯊之類的東西…另外可以提的一件事情是，這個套票在KKDay上買真的是划算，我訂的票是三合一的包含入場票、餵魚以及4D的一個電影，我購買的價格大概是現場售票的6~7折左右，所以如果有想要去的人，誠心建議先用線上訂票，</p>
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0686.JPG" width="50%" alt="Ocean World" title="Ocean World">
+
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0704.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0708.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0721.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0724.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0735.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0754.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0760.JPG" width="50%" alt="Ocean World" title="Ocean World">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Sh58F8wucRw" frameborder="0" allowfullscreen></iframe>
+
+<p>下面這兩張青蛙的照片我覺得我拍得很有意境，感覺有一種少年不識愁滋味的感慨<br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0744.JPG" width="50%" alt="Ocean World" title="Ocean World"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0743.JPG" width="50%" alt="Ocean World" title="Ocean World"></p>
+<p>看完了海洋館時間也差不多接近中午，我兩就決定直接在百貨公司的美食街用餐，這邊的美食街有一件事蠻特別的，就是你必須先去櫃台換一張卡並且儲值之後才能消費，我兩一開始還有點害怕，怕吃不完豈不是浪費了?不過問和服務人員確認後了解，沒用完的金額可以和儲值卡可以再當天營業結束一併退還，既然沒問題那就先來個200，這餐我吃的很一般，由於來到泰國還沒有吃到海南雞飯，行程計畫中也沒有一定要去，所以就先點一個來試試看，在配上一杯泰式奶茶，不得不說泰國的東西真的都滿好吃的，連我這麼挑嘴的人也都可以接受，我想一般人要採到雷的機率是非常非常低，<br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0782.JPG" width="50%" alt="Ocean World" title="Ocean World"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0784.JPG" width="50%" alt="Ocean World" title="Ocean World"></p>
+<p>吃完中餐後我們就去看這套票的附贈的4D電影，常約莫15~20分鐘，不過演的是恐龍…我是不太懂和海洋世界有什麼特殊關連，不過海洋世界本身就是親子行程，所以會有很多的小朋友，我看小朋友們是笑得很開心，所以影片應該是滿不錯的?看完影片後我就想說，要不逛逛百貨公司吧，趁這個空檔順便說說泰國的百貨公司，我個人認為每一間百貨公司的規模，大概都相當於台灣一個Mall的等級，都是會讓你逛到腳軟的那種，至於訂價方面，只要是世界知名品牌，基本標價都和台灣百貨公司一模一樣，不過由於匯率的關係，就是直接打九折的意思，因此有沒有需要在百貨公司大肆採購，我想就見仁見智了，不過泰國的百貨公司真的是很狂，可能我是鄉巴佬，不過在台灣我至少沒看過直接展示汽車的，而且都是保時捷、瑪莎拉蒂這種…</p>
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0788.JPG" width="50%" alt="Ocean World" title="Ocean World">
+<img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0789.JPG" width="50%" alt="Ocean World" title="Ocean World">
+
+<p>由於百貨公司讓我們興趣缺缺，所以逛完後也還不到三點，剛好我也需要再換點泰銖，所以就提議到附近的Super Rich再換點盤纏，走著走著就看到Big C Supercenter，本來這個是我們最後一天的伴手禮行程，不過心想都經過了，不如就先進去晃晃吧，這個Big C是網路上很多人都推薦必逛必買的地方，網路上說這個是藥妝店，不過我比較傾向把他定位在泰國的家樂福…但是真的是滿好逛的，基本上你想要買的伴手禮在這間店應該可以完成80%，逛完賣場後，我兩已經累到翻天了，看了一下時間，這時候出發去晚上的行程似乎有點太早，於是我們兩個就決議先回住的地方一趟，放一下剛買來的戰利品必恢復一下體力!!!</p>
+<p>回到住宿我也是沒閒著，我泡了一碗泰國泡麵，買了一瓶蘋果汁和氣泡水~<br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0795.JPG" width="50%" alt="House" title="House"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0796.JPG" width="50%" alt="House" title="House"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0797.JPG" width="50%" alt="House" title="House"></p>
+<p>先說說泡麵，可能是我真的滿餓的，所以感覺很好吃，不過我有帶回台灣幾包，在吃幾次也是真的不錯，而且很便宜，蘋果汁就那樣沒有特的想法，至於氣泡水…我比較喜歡昨天那個牌子XD，休息了一陣子我兩再度出發，前往ASIATIQUE The Riverfront，目標是吃晚餐和欣賞克里索普人妖秀(Calypso Cabaret Show)，印象中我在這個時候身上已經所剩無幾…所以就隨便找了一間感覺是泰國快炒的店面，點了幾個餐就嗑起來了，話說這時候我兄弟身上換的泰銖幾乎還剩下7成以上，真羨慕他，怎麼他的錢感覺都用不完?我的都很容易離家出走?吃飽喝足之後就要開始欣賞的人妖秀囉!!!<br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0808.JPG" width="50%" alt="ASIATIQUE" title="ASIATIQUE"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0809.JPG" width="50%" alt="ASIATIQUE" title="ASIATIQUE"></p>
+<p>看這個人妖秀還有一段小插曲，就是和我們同桌的友人也是台灣來的!!!不過忘記找他們合照一下有點可惜，這個人妖秀基本上是闔家觀賞的，所以沒有什麼腥羶色，表演一開始主持人一開口我就想到台灣很久以前的歌廳秀…不過整體來說這個表演蠻值得看一下的，整場就是個喜劇氛圍，印象中他們會針對幾個國家的特色進行模仿，美國就是表演碧昂絲，中國就是表演旗袍唱歌，日本則是表演藝伎，當然也不免俗的會和觀眾做一些互動，幸運的我還好沒有選到!!不過這個表演可能有點年紀了，中國那段我完全不知道那首歌是啥…感覺應該是上海灘那個年代的，日本那段更好笑，感覺就是一個醜化的表演，在表演過程成我還一直喵隔壁桌的日本遊客，那個表情看起來有點詭異XD</p>
+<p>看完表演之後時間也不早了，本來想再逛逛市集的，不過我們是搭公共的運輸船時間上確實有點不太允許，所以只能拍個幾張照片就離開了，<br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0814.JPG" width="50%" alt="ASIATIQUE" title="ASIATIQUE"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0815.JPG" width="50%" alt="ASIATIQUE" title="ASIATIQUE"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0817.JPG" width="50%" alt="ASIATIQUE" title="ASIATIQUE"><br><img src="/Blog/2017/03/12/bangkok-independent-travel-III/IMG_0822.JPG" width="50%" alt="ASIATIQUE" title="ASIATIQUE"></p>
+<p>話說在碼頭我還和我兄弟討論，我覺得曼谷真的滿屌的，可以一大早還在充滿各種充滿文化氣息的寺廟區，一個轉眼可以來到媲美台北市市區的百貨林立，再一個跳躍就可以來到這種碼頭市集，真的是讓人有想在這邊工作的衝動!!!時間也不早了我想今天就這樣吧…to be continue.</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/日記/">日記</a><a href="/Blog/tags/旅遊/">旅遊</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Blog/2017/03/12/bangkok-independent-travel-III/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Blog/2017/02/28/bangkok-independent-travel-II/" title="曼谷自由行" itemprop="url">曼谷自由行</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-28T15:47:30.000Z" itemprop="datePublished"> 發表於 2017-02-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="曼谷自由行II"><a href="#曼谷自由行II" class="headerlink" title="曼谷自由行II"></a>曼谷自由行II</h2><h3 id="1-28"><a href="#1-28" class="headerlink" title="1/28"></a>1/28</h3><p>這天預計的行程的只有兩個，一個是聽說很大的市集洽圖洽(CHATUCHAK WEEKEND MARKET)，另一個則是事先買好票的暹羅劇場。說真的要寫這段的時候其實有滿多回憶的，不過翻了一下我的照片，根本完全悲劇，這麼大的市集我只拍不到五張照片…看來只能用回憶湊合一下了，洽圖洽市集建議各位如果有去曼谷，絕對要誇一個六日去這個市集參觀一下，這個市集真的是大到不像話，拜託沒去過的人不要拿什麼花園夜市之類的LP來比雞腿，人家可是佔地超過16個足球場的市集，光是用想的，不對我根本沒辦法想像…<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0646.JPG" width="50%" alt="CHATUCHAK" title="CHATUCHAK"></p>
+<p>話說這天一早我兩兄弟就坐上BTS直接前往Mochit站，一路上整個車廂到處都外國觀光客，想必我們的目的地應該都是洽圖洽市集，所以一下BTS我兩就看著標示跟著人群，馬上就來到了市集的一小角，<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0647.JPG" width="50%" alt="CHATUCHAK" title="CHATUCHAK"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0649.JPG" width="50%" alt="CHATUCHAK" title="CHATUCHAK"></p>
+<p>印象中我在BTS上就看到一大片詭異的建築物，那時候我內心還想應該不是這個吧，如果是這個不要說一天了，兩天都不可能逛的完…進去之後果然沒有讓我失望，真的逛不完啊!!!!我們一開始進去的地方應該算是賣服飾類的，由於我根本沒有帶什麼衣服，所以早就下定決心一定要買個幾件，不然接下來幾天我就沒衣服穿了。在出發到泰國之前每一位朋友都千叮嚀萬交代的告訴我說一定要殺價!!!所以一開始我就鎖定了幾件衣服開始來個討價還價模式，不過真的太便宜了，一件平均都在100泰銖上下，換算成台幣也才90塊，所以後面我真的是懶得殺了XD，看喜歡就直接買吧，就這樣我和我兄弟倆一區逛過一區，有的是一整區都玉飾、古玩，有的則是一整區都在賣皮件，不過最讓人有印象的是一整區都在買寵物相關的地方，舉凡你想的到的鳥類、蛇、魚、狗和貓之類的東西，真的是應有盡有，但是這邊的氣味真的是很嚇人，我兩一進入後就像是個迷路的羔羊，怎麼樣都繞不出來，我都快崩潰了，原本逛這個市集我有一個原則，就是不走曾經走過的路，但是到後面我真的受不了，只好依照我腦中的路徑回到我比較能接受的區域，說實在，逛這市集我兩一點都沒偷懶，從早上10點一直走到1點多，我腳真的是又酸又痛，索性來個腳底按摩回復一下體力，不過不知道是不是我筋太硬，每一次按完我都沒有覺得很舒服，反倒是我的腳好像被拉完筋一樣超級無敵痛，感覺人家按完是要爽的但是我卻他媽超痛，這中間絕對是有什麼誤會，由於這個市集逛不完是一個不爭的事實，所以我兩按摩完之後討論一下決定去補一下第一天沒有逛到的Terminal 21。<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0664.JPG" width="50%" alt="Terminal 21" title="Terminal 21"><br>Terminal 21(第21航站?)，這是一個以航站為主題的百貨公司，說真的是滿酷的，而且不知道是不是因為機場有免稅店的關係，所以整個搭配起來完全沒有違和感，而且每一個層樓都還有不同巧思，有得是日本主題，有的則是倫敦，來這邊除了逛街我想也很適合拍一些照片，<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0651.JPG" width="50%" alt="Terminal 21" title="Terminal 21"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0662.JPG" width="50%" alt="Terminal 21" title="Terminal 21"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0663.JPG" width="50%" alt="Terminal 21" title="Terminal 21"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0660.JPG" width="50%" alt="Terminal 21" title="Terminal 21"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0655.JPG" width="50%" alt="Terminal 21" title="Terminal 21"></p>
+<p>在逛完百貨公司後，由於我昨天預約了第二次套量西服，所以我就暫時和我兄弟分散，他去他的耍廢行程，我去我的套量，並約好八月十五一起殺韃子，不對是六點一起去看暹羅劇場表演，不過套量的過程我也沒拍照，所以很快的文章要來到暹羅劇場(Siam Niramit)，<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0669.JPG" width="50%" alt="Siam Niramit" title="Siam Niramit"></p>
+<p>話說要看這個暹羅劇場還有一段插曲，就是我們出發前就在KKDay定了表演的票，不過因為訂票的時間大概是出發前5天…所以很多票是在出發前都還沒那道，不過Email寄過來的票都有寫要印出來使用，我們兩個也不知道是哪根筋有問題，居然說要去泰國ibon印，我也是很懶所以想說就這樣吧，誰知道不要說是ibon，連輸出店都沒看到，我上網查了一下印一張還40塊泰銖，這他媽根本搶劫，最後我火大乾脆不印了，我想說都買e-Ticket哪有一定要印出來的道理?說真的在領票之前我還想了一套說詞，什麼我們有印但是行李遺失之類的廢話…不過最後結果證明不用印拉!!!我一掏出的購買證明，服務員馬上是是是的就把票遞給我，害我白擔心的一整天，話說暹羅劇場真的酷，一進去感覺上就想是個主題公園，有大象和一些貌似傳統的建築，<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0673.JPG" width="50%" alt="Siam Niramit" title="Siam Niramit"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0674.JPG" width="50%" alt="Siam Niramit" title="Siam Niramit"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0679.JPG" width="50%" alt="Siam Niramit" title="Siam Niramit"><br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0680.JPG" width="50%" alt="Siam Niramit" title="Siam Niramit"></p>
+<p>由於吃飽飯後離開演的時間所剩不多，所以我倆就走走晃晃簡單繞一下，再來就是進入主秀的部分，不過整個表演是不能拍照攝影，所以我只能大概簡述一下內容，一開始我以為暹羅劇場是個類似馬戲團的表演活動，不過完全沒關係，這個劇場大概就想是個舞台劇的感覺，簡單來說就是介紹泰國的歷史，包含過去的輝煌的王朝、社會的演進、傳統農業的生活，以及他們天性樂觀和佛教對他們的影響，內容算是很豐富，而且舞台效果也超好，一場求雨的場景完全讓我嚇呆，不但有著閃電打雷的特效，雨還真的下下來，中間表演還穿插著一些與觀眾的互動，整個就是有趣，如果要去的曼谷玩的人很推薦去看一下，在看完表演後由於這個地方離捷運站有段距離，我們怕時間太晚所以就直接上接駁車直接返回住宿，在曼谷的這幾天晚上，我每天都有買點東西吃，<br>   <img src="/Blog/2017/02/28/bangkok-independent-travel-II/IMG_0684.JPG" width="50%" alt="Value" title="Value"></p>
+<p>話說我沒喝過氣泡水，一喝到完全就是和我意，除了感覺很潮之外，根本就是汽水阿，搞得我最近也想買個氣泡水機…to be continue.</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/日記/">日記</a><a href="/Blog/tags/旅遊/">旅遊</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Blog/2017/02/28/bangkok-independent-travel-II/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/Blog/2017/02/12/bangkok-independent-travel/" title="曼谷自由行" itemprop="url">曼谷自由行</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/Blog/about" title="Ben" target="_blank" itemprop="author">Ben</a>
+		
+  <p class="article-time">
+    <time datetime="2017-02-12T13:53:08.000Z" itemprop="datePublished"> 發表於 2017-02-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="曼谷自由行"><a href="#曼谷自由行" class="headerlink" title="曼谷自由行"></a>曼谷自由行</h2><p>　　去年年底我就一直想出國走走，說是要增廣見聞什麼那都是騙人的，哥就是想要出去爽一下，花一點小錢留下一點發票，證明我還活在這個世界上，不過說到出國這件事，如果扣掉這次的泰國行，我也只有出國一次，就是沙巴的畢業旅行，因此出國、搭飛機這件事對我來說還是挺新鮮的，另外在規劃之前我就已經決定一定要自由行，絕對不跟團！！！所以在國家的挑選上我想了很久，從鄰近的日本、韓國，到東南亞的新加坡、馬來西亞其實我都有認真想過，但是最後為什麼會是去泰國，說實在我也忘記原因的．．．總之就是有個人刷了卡訂了機票然後我們就飛了。<br>  　先來簡單介紹一下這次旅遊的行前規劃，班機時間如下</p>
+   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0480.PNG" width="30%" alt="Flight" title="Flight">
+   
+<p>很明顯這表示我整個過年幾乎都在曼谷，再來簡單介紹一下安排的行程，</p>
+<ul>
+<li>1/26<ul>
+<li>桃園國際機場</li>
+<li>BKK Airport</li>
+<li>Hotel check in.</li>
+<li>Termina 21</li>
+<li>BTS rabbit card, Super rich etc, Make suit.</li>
+</ul>
+</li>
+<li>1/27<ul>
+<li>大皇宮</li>
+<li>Bangkok National Meseum.</li>
+<li>鄭王廟 </li>
+<li>臥佛寺+ Thai Message</li>
+<li>MBK Center</li>
+</ul>
+</li>
+<li>1/28<ul>
+<li>CHATUCHAK WEEKEND MARKET(洽圖洽市集)</li>
+<li>Siam Niramit(暹羅劇場)</li>
+</ul>
+</li>
+<li>1/29<ul>
+<li>Sea Life Bangkok Ocean World.</li>
+<li>Asiatique</li>
+<li>Calypso Cabaret(人妖秀)</li>
+</ul>
+</li>
+<li>1/30<ul>
+<li>A No Other Hound(餐廳)</li>
+<li>Big C Supercenter &amp; Central World(Shopping)</li>
+</ul>
+</li>
+<li>1/31<ul>
+<li>Check out.</li>
+<li>BKK to TPE.</li>
+</ul>
+</li>
+</ul>
+<p>以上是”預計”要走的行程，不過計畫趕不上變化，這也是合情合理的，再來就讓我娓娓道來最後所走過的行程…</p>
+<h3 id="1-26"><a href="#1-26" class="headerlink" title="1/26"></a>1/26</h3><p>第一天就不太順，我們的班機誤點!!因此到曼谷放完行李之後已經快9點了，還好第一天沒有什麼真的重要的行程，除了我要去訂作西裝這件事比較棘手…不過先不管這些事情，由於到的時間太晚，吃的東西實在是少得可憐…我和我的兄弟只能隨便找一間看似文青的店吃個簡餐果果腹，不過餐點是在是很一般，所以就沒拍什麼照片，不過第一天讓我學到了兩件事，第一件事情是泰國的飲料冰塊都很多，第二件事情是green tea指的是抹茶。<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0490.JPG" width="50%" alt="Green Tea" title="Green Tea"></p>
+<h3 id="1-27"><a href="#1-27" class="headerlink" title="1/27"></a>1/27</h3><p>嚴格說起來這才是真的第一天行程!!一早起來我和我的兄弟就坐上BTS，出發前往Saphan Taksin站，再轉搭接駁船，這邊有個小插曲，就是一個long tail boat的拉客業者，會用很不標準的中文說出”大皇宮”，起初一聽到關鍵字我也是滿開心的，不過仔細思考一下覺得事有蹊俏，這長尾船的價格實在是太貴了，而且最好是有官方的快捷船(express boat)有需要招攬客人的道理，所以我看了一眼就回頭，差點就要被海薛一頓。話說我們去的時間是泰皇剛去世沒多久，因此全國上下都還是瀰漫著一股哀傷的感覺，尤其是越接近大皇宮越能感受這低迷的氣氛，所以我們的穿著自然也跟著肅穆了起來，由於網路上並沒有看到大皇宮的套票，所以我們只好現場排隊購買，一套500說真的有點小貴，誰叫我們是觀光客呢?<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0498.JPG" width="50%" alt="Grand Palace ticket" title="Grand Palace ticket"><br>    大皇宮這整個景點感覺就是給人拍照用的，裡面的建築物除了奢華我想不到太多形容詞，直接看照片吧<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0503.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0507.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0510.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0511.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0518.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0520.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0526.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0539.JPG" width="50%" alt="Grand Palace" title="Grand Palace"><br>說真的這大皇宮還真是大，一個進去繞個一圈都要花一兩個小時，走著走著肚子也餓了，聽同事說泰國什麼都好吃，不用特別跑去餐廳，因此我就隨便找了一間麵攤做進去，比手畫腳指著碗裡的東西，老闆就送上來<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0544.JPG" width="50%" alt="Noodles" title="Noodles"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0545.JPG" width="50%" alt="Noodles" title="Noodles"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0546.JPG" width="50%" alt="Noodles" title="Noodles"></p>
+<p>說真的挺好吃的，不論是湯頭還是麵，重點是他媽的有夠便宜，兩個人才吃80泰銖，吃完之後繼續下一個景點，就是曼谷博物館，話說這天運氣有點好，曼谷博物館免費入場!!不過這個博物館和我印象中的不太一樣，哪裡不一樣呢，在台灣的博物館大多都是一棟建築物，但是這裡是好幾個館所組成我覺得應該可以叫做是博物館公園吧，這裡所展覽的東西非常的多樣，有的館陳列佛陀文物，有的則是展覽泰國皇室以前生活的器具，甚至還有展出一些史前的文物，這裡的東西非常多樣化，如果要走完我想應該要花個4小時以上才有可能，畢竟我是用走馬看花的方式看都花了快3小時，重點是有沒有看超過一半我都不知道…<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0552.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0553.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0554.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0567.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0573.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0577.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0580.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0582.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0587.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0588.JPG" width="50%" alt="National Meseum" title="National Meseum"><br>說真的逛完博物館我腳已經痠到爆炸，第一天行程幾乎都是在走路啊!!!再來準備前進下一個景點臥佛寺，坦白說看了一堆佛頭和各種雕像，又要再去看佛我真的是有點暈，不過計劃都訂了就只好繼續執行下去，由於我和我兄弟兩個腳都瀕臨崩潰的狀態，於是乎我提議搭個計程車吧，一上車我們就用英文加google地圖給司機大哥看，他點點頭說沒問題，討價還價後敲定價格就出發，雖然我們兩個很累，不過看著司機開的方向離google目的地越來越遠，我們兩個開始擔心了起來，結果最後下車的地方是鄭王廟(wtf…)，雖然也是我們預定地景點之一，不過我兄弟自此再也不敢搭計程車…<br>    話說來到鄭王廟有點可惜，剛好遇到在整修，所以沒有什麼可看性，因此晃一晃拍個兩張照片我們就要前往臥佛寺，<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0594.JPG" width="50%" alt="Wat Arun" title="Wat Arun"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0598.JPG" width="50%" alt="Wat Arun" title="Wat Arun"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0606.JPG" width="50%" alt="Wat Arun" title="Wat Arun"></p>
+<p>由於鄭王廟就在臥佛寺對岸，所以我們就直接搭接駁船過去，印象中很便宜大概6泰銖，下了船我肚子有點餓，所以就隨手買了椰子冰吃，口味還算是OK，<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0615.JPG" width="50%" alt="Wat Arun" title="Coconut ice cream"></p>
+<p>接著朝臥佛寺的方向邊吃邊前進，一到入口乾又要買票…一整天都在買票，我都有點不想進去了，不過既然都來了我想沒進去之後我可能會後悔吧，在看到之前我心裡想大佛不過就那樣，為什一定要看呢?看到之後我必須說，真他媽的有夠大…值得去看一下，<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0619.JPG" width="50%" alt="Wat Pho" title="Wat Pho"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0622.JPG" width="50%" alt="Wat Pho" title="Wat Pho"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0632.JPG" width="50%" alt="Wat Pho" title="Wat Pho"><br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0633.JPG" width="50%" alt="Wat Pho" title="Wat Pho"></p>
+<p>由於，走了一整天下來，我們兩個腳痠到受不了，另外據說這裡的Thai Message十分了得，所以看完大佛之後我們就決定直接去按摩吧。按摩完之後就準備回程了，在行程表上還有一件事情就是要去MBK Center，在BTS上我看著我要做西裝的店家營業時間，乾!!!居然只營業到20:30，看看時間我想到Nana站可能是19:45上下，所以我就暫時和我兄弟分道揚鑣，他去他的MBK Center，我去我的西服店，<br>   <img src="/Blog/2017/02/12/bangkok-independent-travel/IMG_0909.JPG" width="50%" alt="CROWN" title="CROWN"><br>在簡單問完價格後，我就決定並開始和我的裁縫師討論要怎麼樣的款式，還好我之前有先把一些喜歡的樣式放在pinterest上面，因此討論起來沒有太多的問題，量完尺寸之後便告知明天可以來試套，由於弄完之後時間也不早了，索性就回到住處結束第一天的行程…. to be continue.</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/Blog/tags/日記/">日記</a><a href="/Blog/tags/旅遊/">旅遊</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/Blog/2017/02/12/bangkok-independent-travel/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix">
+    <a class="extend prev" rel="prev" href="/Blog/">&lt;span&gt;&lt;&#x2F;span&gt;Prev</a><a class="page-number" href="/Blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/Blog/page/3/">3</a><a class="page-number" href="/Blog/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/Blog/page/6/">6</a><a class="extend next" rel="next" href="/Blog/page/3/">Next&lt;span&gt;&lt;&#x2F;span&gt;</a>
+  </nav>
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分類</p>
+		<ul>
+		
+		  
+			<li><a href="/Blog/categories/文學/" title="文學">文學<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/Blog/tags/日記/" title="日記">日記<sup>10</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/心得/" title="心得">心得<sup>8</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/大學/" title="大學">大學<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/旅遊/" title="旅遊">旅遊<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/嘴砲/" title="嘴砲">嘴砲<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/golang/" title="golang">golang<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Google-Cloud-Platform/" title="Google Cloud Platform">Google Cloud Platform<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/GCP/" title="GCP">GCP<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/C/" title="C#">C#<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/MongoDB/" title="MongoDB">MongoDB<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/IGS/" title="IGS">IGS<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/環境/" title="環境">環境<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Note/" title="Note">Note<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Docker/" title="Docker">Docker<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/思想/" title="思想">思想<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/土壤學/" title="土壤學">土壤學<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/BigQuery/" title="BigQuery">BigQuery<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/Python/" title="Python">Python<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/土壤環境科學系/" title="土壤環境科學系">土壤環境科學系<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/Blog/tags/農業/" title="農業">農業<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情鏈接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Agriculture &amp; Environment &amp; Programing &amp; Literature <br/>
+			“Reading Maketh a Full Man; Conference a Ready Man; Writing an Exact Man” Francis Bacon.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/lbeeon" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/diinben" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/lbeeon" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		<a href="https://www.linkedin.com/in/lbeeon" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		
+		
+		<a href="mailto:lbeeon@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		
+		<a href="/Blog/about" target="_blank" title="Ben">Ben</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/Blog/js/jquery-2.0.3.min.js"></script>
+<script src="/Blog/js/jquery.imagesloaded.min.js"></script>
+<script src="/Blog/js/gallery.js"></script>
+<script src="/Blog/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'lbeeon';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/Blog/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/Blog/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/Blog/img/scrollup.png"/></a>
+	</div>
+	<script src="/Blog/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+ </html>
