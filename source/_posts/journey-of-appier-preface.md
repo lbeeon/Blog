@@ -36,3 +36,4 @@ All of the experiences in the past, help me achieve some almost impossible missi
 
 In the end, I want to remind myself with few words. "**Don't linger in an established career**" 
 
+{% asset_img IMG_3592.jpg "farewell" %}
